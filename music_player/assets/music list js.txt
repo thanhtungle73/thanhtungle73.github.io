@@ -1,0 +1,50 @@
+const songs = [
+    {
+        name: 'Nevada',
+        singer: 'Vicetone',
+        path: './assets/music/Nevada-Vicetone-4494556.mp3',
+        image: './assets/image/Nevada-Vicetone-4494556.jpg'
+    },
+    {
+        name: 'Animals',
+        singer: 'Maroon 5',
+        path: './assets/music/Animals-Maroon5-3334407.mp3',
+        image: './assets/image/Animals-Maroon5-3334407.jpg'
+    }, 
+    {
+        name: 'Summer Time',
+        singer: 'K391',
+        path: './assets/music/SummerTime-K391-4163084.mp3',
+        image: './assets/image/SummerTime-K391-4163084.jpg'
+    }, 
+    {
+        name: 'Reality Mix',
+        singer: 'LostFrequencies',
+        path: './assets/music/RealityMix-LostFrequencies-4948696.mp3',
+        image: './assets/image/RealityMix-LostFrequencies-4948696.jpg'
+    }, 
+    {
+        name: 'Are You With Me Radio Edit',
+        singer: 'LostFrequencies',
+        path: './assets/music/AreYouWithMeRadioEdit-LostFrequencies-3745590.mp3',
+        image: './assets/image/AreYouWithMeRadioEdit-LostFrequencies-3745590.jpg'
+    }, 
+    {
+        name: 'Sugar',
+        singer: 'Maroon5',
+        path: './assets/music/Sugar-Maroon5-3338455.mp3',
+        image: './assets/image/Sugar-Maroon5-3338455.jpg'
+    }, 
+    {
+        name: 'Counting Stars',
+        singer: 'OneRepublic',
+        path: './assets/music/CountingStars-OneRepublic-5506215.mp3',
+        image: './assets/image/CountingStars-OneRepublic-5506215.jpg'
+    }, 
+    {
+        name: 'Something Just Like This',
+        singer: 'TheChainsmokers, Coldplay',
+        path: './assets/music/SomethingJustLikeThis-TheChainsmokersColdplay-5337136.mp3',
+        image: './assets/image/SomethingJustLikeThis-TheChainsmokersColdplay-5337136.jpg'
+    }, 
+];
