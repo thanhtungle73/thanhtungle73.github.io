@@ -1,7 +1,7 @@
 /* 
 1. render - Done
 2. scroll top - Done
-3. play/pause/seek - 17:00 - 45:00
+3. play/pause/seek - Done
 4. CD rotate
 5. Next/ prev
 6. Random
@@ -20,6 +20,7 @@ const cdThumb = $('.cd .cd-thumb');
 const audio = $('audio');
 const playBtn = $('.btn-toggle-play');
 const player = $('.player');
+const progress = $('#progress');
 
 const app = {
     songs: [
@@ -132,6 +133,16 @@ const app = {
         const cdWidth = cd.offsetWidth;
         const _this = this;
 
+        //Xử lý CD quay / dừng
+        const cdThumbAnimate = cdThumb.animate([
+            { transform: 'rotate(360deg)' }
+        ],
+            {
+                duration: 10000, //10 second
+                iterations: Infinity //lặp vô hạn
+            })
+        cdThumbAnimate.pause();
+
         //Xử lý khi phóng to / thu nhỏ CD
         document.onscroll = function () {
             const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -149,15 +160,36 @@ const app = {
             }
         }
 
-        //Xử lý song được play
+        //Xử lý song được play - Chỉ khi song thực sự play
         audio.onplay = function () {
             _this.isPlaying = true;
             player.classList.add('playing');
+            cdThumbAnimate.play();
         }
-        //Xử lý khi song bị pause
+        //Xử lý khi song bị pause - chỉ khi song thực sự pause
         audio.onpause = function () {
             _this.isPlaying = false;
             player.classList.remove('playing');
+            cdThumbAnimate.pause();
+        }
+
+        //Khi tiến độ thay đổi
+        audio.ontimeupdate = function () {
+            const totalTime = audio.duration;
+            const audioCurrentTime = audio.currentTime;
+            if (totalTime) {
+                const progressPercent = Math.floor(audioCurrentTime * 100 / totalTime);
+                progress.value = progressPercent;
+            }
+        }
+
+        //Xử lý khi tua song
+        progress.oninput = function () {
+            const totalTime = audio.duration;
+            if (totalTime) {
+                const seekTime = progress.value * totalTime / 100;
+                audio.currentTime = seekTime;
+            }
         }
     },
 
@@ -176,8 +208,6 @@ const app = {
 
         //Tải thông tin bài hát đầu tiên vào UI khi chạy ứng dụng
         this.loadCurrentSong();
-
-
 
         //Render playlist
         this.render();
