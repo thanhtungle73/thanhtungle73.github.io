@@ -2,8 +2,8 @@
 1. render - Done
 2. scroll top - Done
 3. play/pause/seek - Done
-4. CD rotate
-5. Next/ prev
+4. CD rotate - Done
+5. Next/ prev - Done
 6. Random
 7. Next / Repeat when ended
 8. Active song
@@ -15,12 +15,15 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 const cd = $('.dashboard .cd');
+const nextBtn = $('.btn-next');
+const prevBtn = $('.btn-prev');
 const heading = $('header h2');
 const cdThumb = $('.cd .cd-thumb');
 const audio = $('audio');
 const playBtn = $('.btn-toggle-play');
 const player = $('.player');
 const progress = $('#progress');
+const randomBtn = $('.btn-random');
 
 const app = {
     songs: [
@@ -81,7 +84,7 @@ const app = {
         {
             name: 'My Love',
             singer: 'Westlife',
-            path: './assets/music/MyLove-Westlife-5406564-Westlife-5406564.mp3',
+            path: './assets/music/MyLove-Westlife-5406564.mp3',
             image: './assets/image/MyLove-Westlife-5406564.jpg'
         },
         {
@@ -101,6 +104,8 @@ const app = {
     currentIndex: 0,
 
     isPlaying: false,
+
+    isRandom: false,
 
     render: function () {
         $('.playlist').innerHTML = this.songs.map((song) => {
@@ -191,12 +196,72 @@ const app = {
                 audio.currentTime = seekTime;
             }
         }
+
+        //Xử lý khi next song - Có thêm css cho button, khác với original video
+        nextBtn.onclick = function () {
+            nextBtn.classList.add('active');
+            setTimeout(function () {
+                nextBtn.classList.remove('active');
+            }, 100);
+            if (_this.isRandom) {
+                _this.randomSong();
+            } else {
+                _this.nextSong();
+            }
+            audio.play();
+        }
+
+        //Xử lý khi previous song - Có thêm css cho button
+        prevBtn.onclick = function () {
+            prevBtn.classList.add('active');
+            setTimeout(function () {
+                prevBtn.classList.remove('active');
+            }, 100);
+            if (_this.isRandom) {
+                _this.randomSong();
+            } else {
+                _this.prevSong();
+            }
+            audio.play();
+        }
+
+        //Xử lý khi random song
+        randomBtn.onclick = function () {
+            _this.isRandom = !_this.isRandom;
+            randomBtn.classList.toggle('active', _this.isRandom);
+        }
+
     },
 
     loadCurrentSong: function () {
         heading.innerText = this.currentSong.name;
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
         audio.src = this.currentSong.path;
+    },
+
+    nextSong: function () {
+        this.currentIndex++;
+        if (this.currentIndex >= this.songs.length) {
+            this.currentIndex = 0;
+        }
+        this.loadCurrentSong();
+    },
+
+    prevSong: function () {
+        this.currentIndex--;
+        if (this.currentIndex < 0) {
+            this.currentIndex = this.songs.length - 1;
+        }
+        this.loadCurrentSong();
+    },
+
+    randomSong: function () {
+        let newRandomIndex;
+        do {
+            newRandomIndex = Math.floor(Math.random() * this.songs.length);
+        } while (newRandomIndex === this.currentIndex);
+        this.currentIndex = newRandomIndex;
+        this.loadCurrentSong();
     },
 
     start: function () {
