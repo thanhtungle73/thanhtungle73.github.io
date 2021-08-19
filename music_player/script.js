@@ -4,26 +4,29 @@
 3. play/pause/seek - Done
 4. CD rotate - Done
 5. Next/ prev - Done
-6. Random
-7. Next / Repeat when ended
-8. Active song
+6. Random - Done
+7. Next / Repeat when ended - Done
+8. Active song - Done
 9. Scroll active song into view
 10. play song when click
+- Đưa những song đã hát vào 1 array > Khi phát hết những bài chưa phát > clear array bắt đầu lại => tránh tình trạng phát lại những bài đã phát
+
 */
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 const cd = $('.dashboard .cd');
-const nextBtn = $('.btn-next');
-const prevBtn = $('.btn-prev');
+const audio = $('audio');
+const player = $('.player');
 const heading = $('header h2');
 const cdThumb = $('.cd .cd-thumb');
-const audio = $('audio');
-const playBtn = $('.btn-toggle-play');
-const player = $('.player');
 const progress = $('#progress');
+const playBtn = $('.btn-toggle-play');
+const nextBtn = $('.btn-next');
+const prevBtn = $('.btn-prev');
 const randomBtn = $('.btn-random');
+const repeatBtn = $('.btn-repeat');
 
 const app = {
     songs: [
@@ -107,6 +110,10 @@ const app = {
 
     isRandom: false,
 
+    isRepeat: false,
+
+    playedSongs: [],
+
     render: function () {
         $('.playlist').innerHTML = this.songs.map((song) => {
             return `
@@ -137,6 +144,17 @@ const app = {
     handelEvent: function () {
         const cdWidth = cd.offsetWidth;
         const _this = this;
+        //Fuction handel random and repeat song
+        const handelRandomRepeat = function () {
+            if (_this.isRepeat) {
+                _this.loadCurrentSong();
+            } else if (_this.isRandom) {
+                _this.randomSong();
+            } else {
+                _this.nextSong();
+            }
+            audio.play();
+        };
 
         //Xử lý CD quay / dừng
         const cdThumbAnimate = cdThumb.animate([
@@ -145,7 +163,7 @@ const app = {
             {
                 duration: 10000, //10 second
                 iterations: Infinity //lặp vô hạn
-            })
+            });
         cdThumbAnimate.pause();
 
         //Xử lý khi phóng to / thu nhỏ CD
@@ -171,6 +189,7 @@ const app = {
             player.classList.add('playing');
             cdThumbAnimate.play();
         }
+
         //Xử lý khi song bị pause - chỉ khi song thực sự pause
         audio.onpause = function () {
             _this.isPlaying = false;
@@ -200,9 +219,11 @@ const app = {
         //Xử lý khi next song - Có thêm css cho button, khác với original video
         nextBtn.onclick = function () {
             nextBtn.classList.add('active');
+
             setTimeout(function () {
                 nextBtn.classList.remove('active');
             }, 100);
+
             if (_this.isRandom) {
                 _this.randomSong();
             } else {
@@ -214,9 +235,11 @@ const app = {
         //Xử lý khi previous song - Có thêm css cho button
         prevBtn.onclick = function () {
             prevBtn.classList.add('active');
+
             setTimeout(function () {
                 prevBtn.classList.remove('active');
             }, 100);
+
             if (_this.isRandom) {
                 _this.randomSong();
             } else {
@@ -231,6 +254,26 @@ const app = {
             randomBtn.classList.toggle('active', _this.isRandom);
         }
 
+        //Xử lý khi next kết thúc song
+        audio.onended = function () {
+            handelRandomRepeat();
+        }
+
+        //Xử lý khi repeat -  1 bài - 1 danh sách
+        repeatBtn.onclick = function () {
+            _this.isRepeat = !_this.isRepeat;
+            repeatBtn.classList.toggle('active', _this.isRepeat);
+        }
+
+        //Xử lý active khi song isPlaying
+        audio.onloadeddata = function () {
+            const currentPlaySong = $$('.song');
+            const activedSong = $('.song.active');
+            if (activedSong) {
+                activedSong.classList.remove('active');
+            }
+            currentPlaySong[_this.currentIndex].classList.add('active');
+        }
     },
 
     loadCurrentSong: function () {
@@ -256,11 +299,17 @@ const app = {
     },
 
     randomSong: function () {
+        //Xử lý random chống trùng bài hiện tại và những bài đã phát
         let newRandomIndex;
+        if (this.playedSongs.length >= this.songs.length) {
+            this.playedSongs = [];
+        }
         do {
             newRandomIndex = Math.floor(Math.random() * this.songs.length);
-        } while (newRandomIndex === this.currentIndex);
+        } while (newRandomIndex === this.currentIndex || this.playedSongs.includes(newRandomIndex));
+
         this.currentIndex = newRandomIndex;
+        this.playedSongs.push(newRandomIndex);
         this.loadCurrentSong();
     },
 
