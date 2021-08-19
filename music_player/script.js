@@ -266,7 +266,7 @@ const app = {
         }
 
         //Xử lý active khi song isPlaying
-        audio.onloadeddata = function () {
+        audio.onloadstart = function () {
             const currentPlaySong = $$('.song');
             const activedSong = $('.song.active');
             if (activedSong) {
