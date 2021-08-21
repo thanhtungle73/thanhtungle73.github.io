@@ -230,6 +230,7 @@ const app = {
                 _this.nextSong();
             }
             audio.play();
+            _this.scrollToActiveSong();
         }
 
         //Xử lý khi previous song - Có thêm css cho button
@@ -246,6 +247,7 @@ const app = {
                 _this.prevSong();
             }
             audio.play();
+            _this.scrollToActiveSong();
         }
 
         //Xử lý khi random song
@@ -274,6 +276,24 @@ const app = {
             }
             currentPlaySong[_this.currentIndex].classList.add('active');
         }
+    },
+
+    scrollToActiveSong: function () {
+        setTimeout(() => {
+            const activeSong = $('.song.active');
+            if (this.currentIndex <= 3 && this.currentIndex >= 0) {
+                activeSong.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'end'
+                });
+            } else {
+                activeSong.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }, 200);
+
     },
 
     loadCurrentSong: function () {
@@ -325,6 +345,7 @@ const app = {
 
         //Render playlist
         this.render();
+
     }
 }
 
