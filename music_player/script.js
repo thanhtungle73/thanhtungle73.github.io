@@ -281,7 +281,7 @@ const app = {
     scrollToActiveSong: function () {
         setTimeout(() => {
             const activeSong = $('.song.active');
-            if (this.currentIndex <= 3 && this.currentIndex >= 0) {
+            if (this.currentIndex <= 3) {
                 activeSong.scrollIntoView({
                     behavior: 'smooth',
                     block: 'end'
@@ -292,7 +292,7 @@ const app = {
                     block: 'center'
                 });
             }
-        }, 200);
+        }, 350);
 
     },
 
@@ -345,7 +345,6 @@ const app = {
 
         //Render playlist
         this.render();
-
     }
 }
 
