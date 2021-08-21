@@ -7,8 +7,8 @@
 6. Random - Done
 7. Next / Repeat when ended - Done
 8. Active song - Done
-9. Scroll active song into view
-10. play song when click
+9. Scroll active song into view - Done
+10. play song when click - 1:28:00
 - Đưa những song đã hát vào 1 array > Khi phát hết những bài chưa phát > clear array bắt đầu lại => tránh tình trạng phát lại những bài đã phát
 
 */
@@ -27,6 +27,7 @@ const nextBtn = $('.btn-next');
 const prevBtn = $('.btn-prev');
 const randomBtn = $('.btn-random');
 const repeatBtn = $('.btn-repeat');
+const playList = $('.playList');
 
 const app = {
     songs: [
@@ -115,9 +116,9 @@ const app = {
     playedSongs: [],
 
     render: function () {
-        $('.playlist').innerHTML = this.songs.map((song) => {
+        $('.playlist').innerHTML = this.songs.map((song, index) => {
             return `
-            <div class="song">
+            <div class="song" onclick = "app.handleClickSong(${index})" >
             <div class="thumb"
                 style="background-image: url('${song.image}')">
             </div>
@@ -276,6 +277,10 @@ const app = {
             }
             currentPlaySong[_this.currentIndex].classList.add('active');
         }
+
+        //Xử lý khi click song name
+        
+
     },
 
     scrollToActiveSong: function () {
@@ -331,6 +336,12 @@ const app = {
         this.currentIndex = newRandomIndex;
         this.playedSongs.push(newRandomIndex);
         this.loadCurrentSong();
+    },
+
+    handleClickSong: function (index) {
+        this.currentIndex = index;
+        this.loadCurrentSong();
+        audio.play();
     },
 
     start: function () {
