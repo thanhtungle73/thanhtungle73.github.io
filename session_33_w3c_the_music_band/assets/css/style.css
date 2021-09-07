@@ -32,6 +32,7 @@ html {
   right: 0;
   height: 46px;
   background-color: #000;
+  z-index: 1;
 }
 
 #nav {
@@ -105,13 +106,51 @@ html {
   padding: 0 24px;
 }
 
-#slider {
-    margin: 46px;
-    height: 1500px;
+#sliders .slider {
+  position: relative;
+}
+
+#sliders .slider-1 {
+  margin-top: 46px;
+  padding-top: 50%;
+  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/la.jpg")
+    no-repeat top center/cover;
+}
+
+#sliders .slider-2 {
+  margin-top: 46px;
+  padding-top: 50%;
+  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/ny.jpg")
+    no-repeat top center/cover;
+}
+
+#sliders .slider-3 {
+  margin-top: 46px;
+  padding-top: 50%;
+  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/chicago.jpg")
+    no-repeat top center/cover;
+}
+
+#sliders .text-content {
+  position: absolute;
+  bottom: 30px;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+
+#sliders .text-content .heading {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#sliders .text-content .text-description {
+  font-size: 15px;
+  font-weight: bolder;
+  margin-top: 25px;
 }
 
 #content {
-  
 }
 
 #footer {
