@@ -15,7 +15,6 @@ const app = {
     const maxLength = slides.length;
     const _this = this;
     this.resetImg();
-
     if (this.currentIndex > maxLength - 1) {
       this.currentIndex = 0;
     }
