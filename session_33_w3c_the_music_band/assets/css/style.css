@@ -237,5 +237,62 @@ html {
   margin-right: 16px;
 }
 
+/* Tour Places */
+.place-item {/* để sử dụng được margin, element phải set kích thước cứng */
+  float: left;
+  width: calc(100%/3);
+  padding: 0 8px; /* vì box-sizing là padding và padding sẽ làm giảm kích thước element => căn chỉnh tốt hơn margin */
+
+}
+
+
+.places-list {
+  margin: 32px -8px 50px;
+}
+
+.place-img {
+  width: 100%;
+  display: block;
+}
+
+.place-img:hover {
+  opacity: 0.6;
+}
+
+.place-body {
+  background-color: #fff;
+  font-size: 15px;
+  padding: 16px;
+}
+
+.place-heading {
+  font-size: 15px;
+}
+
+.place-time {
+  font-size: 15px;
+  margin: 18px 0;
+  color: #757575;
+}
+
+.place-description {
+  margin: 18px 0;
+  line-height: 1.4;
+}
+
+.place-buy-btn {
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 16px;
+  display: inline-block;
+}
+
+.place-buy-btn:hover {
+  color: #000;
+  background-color: #ccc;
+}
+
+
 #footer {
 }
