@@ -238,13 +238,12 @@ html {
 }
 
 /* Tour Places */
-.place-item {/* để sử dụng được margin, element phải set kích thước cứng */
+.place-item {
+  /* để sử dụng được margin, element phải set kích thước cứng */
   float: left;
-  width: calc(100%/3);
+  width: calc(100% / 3);
   padding: 0 8px; /* vì box-sizing là padding và padding sẽ làm giảm kích thước element => căn chỉnh tốt hơn margin */
-
 }
-
 
 .places-list {
   margin: 32px -8px 50px;
@@ -293,6 +292,116 @@ html {
   background-color: #ccc;
 }
 
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-container {
+  position: absolute;
+  top: 100px;
+  background: #fff;
+  width: 900px;
+  max-width: calc(100% - 32px);
+  min-height: 300px;
+  animation-name: drop;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes drop {
+  from {top: -200px; opacity: 0;}
+  to {top: 100px; opacity: 1;}
+}
+
+.modal-icon-container {
+  float: right;
+  width: 46px;
+  height: 52px;
+  color: #fff;
+  line-height: 52px;
+  text-align: center;
+}
+
+.modal-icon-container:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+.modal-header {
+  min-height: 129px;
+  background: #009688;
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 4px;
+  line-height: 129px;
+}
+
+.modal-header-icon {
+  margin-right: 10px;
+}
+
+.modal-body {
+  padding: 0 16px;
+}
+
+.modal-label {
+  display: block;
+  font-size: 15px;
+  margin: 24px 0 0px;
+}
+
+.modal-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 8px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.pay-btn {
+  height: 54px;
+  width: 100%;
+  margin: 15px 0 9px;
+  border: none;
+  background-color: #009688;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.pay-btn:hover {
+  background: #ccc;
+  color: #000;
+  cursor: pointer;
+}
+
+.modal-body .warning-msg {
+  visibility: hidden;
+  width: 100%;
+  color: #ff0101;
+  text-align: center;
+}
+
+.modal-footer {
+  float: right;
+  padding: 0 15px;
+  margin: 5px 0 15px;
+}
+
+.modal-footer a {
+  color: #2196f3;
+}
 
 #footer {
 }
