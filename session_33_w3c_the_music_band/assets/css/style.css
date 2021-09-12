@@ -22,9 +22,56 @@ html {
 3. Màu sắc
 4. Kiểu dáng (kiểu chữ, hình tròn, vuông,...
  */
-#main {
+
+/* Common */
+.clear-fix {
+  clear: both;
 }
 
+.text-white {
+  color: #fff !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  /* để sử dụng được margin, element phải set kích thước cứng */
+  /* vì box-sizing là padding và padding sẽ làm giảm kích thước element => căn chỉnh tốt hơn margin */
+}
+
+.col-third {
+  width: calc(100% / 3);
+}
+
+.col-half {
+  width: calc(100% / 2);
+}
+
+/* main */
 #header {
   position: fixed;
   top: 0;
@@ -33,14 +80,6 @@ html {
   height: 46px;
   background-color: #000;
   z-index: 1;
-}
-
-.clear-fix {
-  clear: both;
-}
-
-.text-white {
-  color: #fff !important;
 }
 
 #nav {
@@ -186,11 +225,8 @@ html {
   line-height: 1.4;
 }
 
-#content .member-item {
-  float: left;
-  width: calc(100% / 3);
+#content .member-list {
   margin-top: 48px;
-  text-align: center;
 }
 
 #content .member-name {
@@ -238,15 +274,9 @@ html {
 }
 
 /* Tour Places */
-.place-item {
-  /* để sử dụng được margin, element phải set kích thước cứng */
-  float: left;
-  width: calc(100% / 3);
-  padding: 0 8px; /* vì box-sizing là padding và padding sẽ làm giảm kích thước element => căn chỉnh tốt hơn margin */
-}
-
 .places-list {
-  margin: 32px -8px 50px;
+  margin-top: 32px;
+  margin-bottom: 50px;
 }
 
 .place-img {
@@ -320,8 +350,14 @@ html {
 }
 
 @keyframes drop {
-  from {top: -200px; opacity: 0;}
-  to {top: 100px; opacity: 1;}
+  from {
+    top: -200px;
+    opacity: 0;
+  }
+  to {
+    top: 100px;
+    opacity: 1;
+  }
 }
 
 .modal-icon-container {
@@ -336,6 +372,7 @@ html {
 .modal-icon-container:hover {
   background-color: #ccc;
   color: #000;
+  cursor: pointer;
 }
 
 .modal-header {
@@ -403,5 +440,53 @@ html {
   color: #2196f3;
 }
 
+/* Contact */
+.contact-container {
+  margin-top: 48px;
+  font-size: 18px;
+}
+
+.contact-infor {
+  line-height: 1.5;
+}
+
+.contact-icon {
+  width: 30px;
+}
+
+.contact-form-item {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+}
+
+.contact-send-btn {
+  float: right;
+  padding: 12px;
+  border: none;
+  background: #000;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.contact-send-btn:hover {
+  background-color: #ccc;
+  color: #000;
+  cursor: pointer;
+}
+
 #footer {
+  min-height: 1280px;
+  margin-top: 32px;
+}
+
+.footer-img {
+  padding-top: 56%;
+  background: url("/session_33_w3c_the_music_band/assets/img/footer/map.jpg") no-repeat top center/cover;
+}
+
+.footer-info {
+  
 }

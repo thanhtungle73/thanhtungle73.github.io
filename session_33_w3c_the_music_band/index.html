@@ -81,22 +81,21 @@
                     mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip ex ea commodo consequat.</p>
-                <div class="member-list">
-                    <div class="member-item">
+                <div class="row member-list">
+                    <div class="col col-third text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/band/bandmember.jpg" alt="Name" class="member-img">
                     </div>
 
-                    <div class="member-item">
+                    <div class="col col-third text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/band/bandmember.jpg" alt="Name" class="member-img">
                     </div>
 
-                    <div class="member-item">
+                    <div class="col col-third text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/band/bandmember.jpg" alt="Name" class="member-img">
                     </div>
-                    <div class="clear-fix"></div>
                 </div>
             </div>
 
@@ -112,8 +111,8 @@
                     </ul>
 
 
-                    <div class="places-list">
-                        <div class="place-item">
+                    <div class="row places-list">
+                        <div class="col col-third">
                             <img src="./assets/img/tickets/newyork.jpg" alt="New York" class="place-img">
                             <div class="place-body">
                                 <h2 class="place-heading">New York</h2>
@@ -124,7 +123,7 @@
                             </div>
                         </div>
 
-                        <div class="place-item">
+                        <div class="col col-third">
                             <img src="./assets/img/tickets/paris.jpg" alt="Paris" class="place-img">
                             <div class="place-body">
                                 <h2 class="place-heading">Paris</h2>
@@ -135,7 +134,7 @@
                             </div>
                         </div>
 
-                        <div class="place-item">
+                        <div class="col col-third">
                             <img src="./assets/img/tickets/sanfran.jpg" alt="San Francisco" class="place-img">
                             <div class="place-body">
                                 <h2 class="place-heading">San Francisco</h2>
@@ -145,19 +144,60 @@
                                 <a href="#" class="place-buy-btn">Buy Tickets</a>
                             </div>
                         </div>
-                        <div class="clear-fix"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="content-section">
-                <h2 class="content-heading">CONTACT</h2>
-                <p class="content-sub-heading">Fan? Drop a note!</p>
+            <div class="contact-section">
+                <div class="content-section">
+                    <h2 class="content-heading">CONTACT</h2>
+                    <p class="content-sub-heading">Fan? Drop a note!</p>
+
+                    <div class="row contact-container">
+                        <div class="col col-half contact-infor">
+                            <p class="contact-address">
+                                <i class="contact-icon fas fa-map-marker-alt"></i>
+                                Chicago, US
+                            </p>
+                            <p class="contact-phone">
+                                <i class="contact-icon fas fa-phone-alt"></i>
+                                Phone: +00 151515
+                            </p>
+                            <p class="contact-email">
+                                <i class="contact-icon fas fa-envelope"></i>
+                                Email: mail@mail.com
+                            </p>
+                        </div>
+
+                        <div class="col col-half">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col col-half">
+                                        <input type="text" placeholder="Name" required class="contact-form-item">
+                                    </div>
+
+                                    <div class="col col-half">
+                                        <input type="text" placeholder="Email" required class="contact-form-item">
+                                    </div>
+                                </div>
+
+                                <div class="mt-8">
+                                    <input type="text" placeholder="Message" required class="contact-form-item">
+                                </div>
+                                <button class="contact-send-btn mt-16">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="footer">
-
+            <div class="footer-container">
+                <div class="footer-img"></div>
+                <div class="footer-icon"></div>
+                <div class="footer-info text-center">Powered by <a href="#">w3.css</a></div>
+            </div>
         </div>
     </div>
 
