@@ -1,14 +1,17 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const slides = $$(".slider");
-const modal = $(".modal");
+const modal = $(".place-modal");
 const buyBtns = $$(".place-buy-btn");
 const closeBtn = $(".modal-icon-container");
 const payBtn = $(".pay-btn");
 const modalInput = $$(".modal-input");
 const warningMsg = $(".warning-msg");
 const modalContainer = $(".modal-container");
-const sendBtn = $(".contact-send-btn");
+const sendBtn = $(".content-section button");
+const contactCloseBtn = $(".contact-close-popup");
+const contactModal = $(".contact-modal");
+const contactInputs = $$(".contact-form-item");
 
 const app = {
   currentIndex: 0,
@@ -62,7 +65,7 @@ const app = {
     };
 
     //Handel when click out side the model
-    modal.onclick = function (e) {
+    modal.onclick = function () {
       modal.style.display = "none";
     };
 
@@ -78,38 +81,26 @@ const app = {
         _this.resetModal();
       }
     };
-    
-   /*  //Handle when clicking send btn
+
+    //handel when clicking send button
     sendBtn.onclick = function (e) {
-      //Ngan su kien noi bot tu the nay khi co element cha dang lang nghe
-      e.stopPropagation();
-
-      _this.resetContactFormPopup();
-
-      let isValue = Array.from(contactInput).every(function (e, index) {
-        if (!e.value) {
-          _this.currentSendInputIndex = index;
-        }
-        return e.value;
+      let hasValue = Array.from(contactInputs).every(function (element) {
+        return element.value;
       });
 
-      if (!isValue) {
-        popup[_this.currentSendInputIndex].style.display = "block";
-      } else {
+      if (hasValue) {
+        e.preventDefault();
+        contactModal.style.display = "flex";
+        Array.from(contactInputs).forEach(function (element) {
+          return (element.value = "");
+        });
       }
     };
 
-    //Handle when clicking outside to close the popup
-    main.onclick = function () {
-      Array.from(contactInput).forEach(function (element) {
-        element.onclick = function (e) {
-          //Chan su kien noi bot khi lang nghe su kien o the cha
-          e.stopPropagation();
-        };
-      });
-
-      _this.resetContactFormPopup();
-    }; */
+    //handle when clicking close btn
+    contactCloseBtn.onclick = function () {
+      contactModal.style.display = "none";
+    };
   },
 
   resetModal: function () {

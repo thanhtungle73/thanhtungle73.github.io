@@ -6,7 +6,8 @@
 }
 
 html {
-  font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 15px;
 }
 
@@ -44,6 +45,25 @@ html {
   margin-top: 16px;
 }
 
+.pull-right {
+  float: right !important;
+}
+
+.btn {
+  padding: 10px 16px;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.btn:hover {
+  color: #000;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
 .row {
   margin-left: -8px;
   margin-right: -8px;
@@ -69,6 +89,18 @@ html {
 
 .col-half {
   width: calc(100% / 2);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* main */
@@ -198,7 +230,7 @@ html {
 }
 
 #content .content-section {
-  padding: 64px 0;
+  padding: 64px 0 112px;
   width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -276,7 +308,6 @@ html {
 /* Tour Places */
 .places-list {
   margin-top: 32px;
-  margin-bottom: 50px;
 }
 
 .place-img {
@@ -309,31 +340,9 @@ html {
   line-height: 1.4;
 }
 
-.place-buy-btn {
-  text-decoration: none;
-  background-color: #000;
-  color: #fff;
-  padding: 10px 16px;
-  display: inline-block;
-}
-
-.place-buy-btn:hover {
-  color: #000;
-  background-color: #ccc;
-}
-
 /* Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
+.place-modal {
   display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
 }
 
 .modal-container {
@@ -461,32 +470,96 @@ html {
   border: 1px solid #ccc;
 }
 
-.contact-send-btn {
-  float: right;
-  padding: 12px;
-  border: none;
-  background: #000;
-  font-size: 15px;
-  text-transform: uppercase;
+.map-img img {
+  width: 100%;
+}
+
+/* Contact modal */
+.contact-modal {
+  display: none;
+}
+
+.contact-modal-container {
+  position: absolute;
+  top: 300px;
+  width: 300px;
+  min-height: 150px;
+  max-width: calc(100% - 64px);
+  background: #fff;
+  animation-name: show;
+  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+}
+
+@keyframes show {
+  from {
+    top: 0;
+    opacity: 0.3;
+  }
+  to {
+    top: 300px;
+    opacity: 1;
+  }
+}
+
+.contact-modal-icon-container {
+  padding: 16px;
   color: #fff;
 }
 
-.contact-send-btn:hover {
+.contact-modal-icon-container:hover {
   background-color: #ccc;
   color: #000;
-  cursor: pointer;
 }
 
-#footer {
-  min-height: 1280px;
-  margin-top: 32px;
+.contact-modal-header {
+  min-height: 50px;
+  padding: 0 20px;
+  background: #009688;
+  color: #fff;
+  font-size: 15px;
+  line-height: 50px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
-.footer-img {
-  padding-top: 56%;
-  background: url("/session_33_w3c_the_music_band/assets/img/footer/map.jpg") no-repeat top center/cover;
+.contact-modal-body {
+  min-height: 100px;
+  font-size: 15px;
+  line-height: 100px;
 }
 
+.contact-close-popup {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Footer */
 .footer-info {
-  
+  padding: 75px 16px;
+  opacity: 0.6;
+}
+
+.footer-icon {
+  font-size: 24px;
+}
+
+.footer-icon a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-copy-right a:hover,
+.footer-icon a:hover {
+  opacity: 0.6;
+}
+
+.footer-copy-right {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.footer-copy-right a {
+  color: #000;
 }
