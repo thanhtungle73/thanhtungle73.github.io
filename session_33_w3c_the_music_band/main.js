@@ -12,6 +12,9 @@ const sendBtn = $(".content-section button");
 const contactCloseBtn = $(".contact-close-popup");
 const contactModal = $(".contact-modal");
 const contactInputs = $$(".contact-form-item");
+const mobileMenuBtn = $(".mobile-menu-btn");
+const header = $("#header");
+const navListItem = $$("#nav > li");
 
 const app = {
   currentIndex: 0,
@@ -101,6 +104,20 @@ const app = {
     contactCloseBtn.onclick = function () {
       contactModal.style.display = "none";
     };
+
+    /* Mobile responsive*/
+    //Handle when click mobile menu icon
+    mobileMenuBtn.onclick = function () {
+      header.classList.toggle("activeMenuBtn");
+    };
+
+    Array.from(navListItem).forEach(function (element, index) {
+      if (index > 0 && index < navListItem.length - 1) {
+        navListItem[index].onclick = function () {
+          header.classList.remove("activeMenuBtn");
+        };
+      }
+    });
   },
 
   resetModal: function () {

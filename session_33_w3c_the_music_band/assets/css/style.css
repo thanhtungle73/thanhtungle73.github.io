@@ -169,8 +169,19 @@ html {
   line-height: 38px;
 }
 
+#header .mobile-menu-btn {
+  display: none;
+}
+
+#header .mobile-menu-btn,
 #header #search-btn {
   float: right;
+}
+
+#header .menu-icon:hover,
+#header .mobile-menu-btn:hover {
+  background-color: #ccc;
+  color: #000;
 }
 
 #header #search-btn:hover {
@@ -178,6 +189,7 @@ html {
   background-color: #f44336;
 }
 
+#header .menu-icon,
 #header .search-icon {
   color: #fff;
   line-height: 46px;
@@ -232,8 +244,11 @@ html {
 #content .content-section {
   padding: 64px 0 112px;
   width: 800px;
+  max-width: 100%; /* Khi kich thuoc cua content-section lon hon parent max-width se apply */
   margin-left: auto;
   margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 #content .content-heading {
