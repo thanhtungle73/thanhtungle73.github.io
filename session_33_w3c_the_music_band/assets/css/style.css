@@ -171,11 +171,15 @@ html {
 
 #header .mobile-menu-btn {
   display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #header .mobile-menu-btn,
 #header #search-btn {
   float: right;
+  padding: 0 24px;
 }
 
 #header .menu-icon:hover,
@@ -194,7 +198,6 @@ html {
   color: #fff;
   line-height: 46px;
   font-size: 15px;
-  padding: 0 24px;
 }
 
 #sliders .slider {

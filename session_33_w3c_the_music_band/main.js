@@ -14,8 +14,9 @@ const contactModal = $(".contact-modal");
 const contactInputs = $$(".contact-form-item");
 const mobileMenuBtn = $(".mobile-menu-btn");
 const header = $("#header");
-const navListItems = $$("#nav > li");
-const subnavListItems = $$('.subnav > li')
+const navListItems = $$("#nav > li > a");
+const subnavListItems = $$(".subnav > li");
+const subnav = $(".subnav");
 
 const app = {
   currentIndex: 0,
@@ -46,6 +47,16 @@ const app = {
 
   handleEvent: function () {
     const _this = this;
+    let toggleSub = true;
+
+    const toggleSubMenu = function () {
+      if (toggleSub) {
+        subnav.style.display = "block";
+      } else {
+        subnav.style.display = "none";
+      }
+      toggleSub = !toggleSub;
+    };
 
     //Handle when clicking Buy Tickets button
     buyBtns.forEach((element) => {
@@ -107,24 +118,34 @@ const app = {
     };
 
     /* Mobile responsive*/
-    //Handle when clicking mobile menu icon
+    //handle when clicking mobile menu icon
     mobileMenuBtn.onclick = function () {
+      subnav.style.display = "none";
       header.classList.toggle("activeMenuBtn");
+      toggleSub = true;
     };
 
-    //Handel when clicking menu items
+    //handle when clicking menu items
     Array.from(navListItems).forEach(function (element, index) {
-      if (index < navListItems.length - 1) {
-        navListItems[index].onclick = function () {
+      navListItems[index].onclick = function (e) {
+        const isParent =
+          e.target.nextElementSibling &&
+          e.target.nextElementSibling.classList.contains("subnav");
+
+        if (isParent) {
+          toggleSubMenu();
+          e.preventDefault();
+        } else {
           header.classList.remove("activeMenuBtn");
-        };
-      }
+        }
+      };
     });
 
+    //handle when clicking sub menu
     Array.from(subnavListItems).forEach(function (element) {
       element.onclick = function (e) {
         header.classList.remove("activeMenuBtn");
-      }
+      };
     });
   },
 

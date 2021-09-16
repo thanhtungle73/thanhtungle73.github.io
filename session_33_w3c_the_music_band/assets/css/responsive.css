@@ -16,22 +16,8 @@
     width: 100%;
   }
 
-  #nav > li {
-    display: block;
-  }
-
-  #nav li:first-child:hover > a {
-    background-color: #ccc;
-    color: #000;
-  }
-
   #header {
     overflow: hidden;
-  }
-
-  .activeMenuBtn {
-    height: auto !important;
-    overflow: visible !important;
   }
 
   #header #search-btn {
@@ -40,6 +26,48 @@
 
   #header .mobile-menu-btn {
     display: block;
+  }
+
+  #nav {
+    display: block;
+  }
+
+  #nav > li {
+    display: block;
+  }
+
+  #nav > li:first-child {
+    display: inline-block;
+  }
+
+  #nav .subnav {
+    position: inherit;
+    animation-name: dropSubMenu;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+  }
+
+  @keyframes dropSubMenu {
+    from {
+      height: 0;
+    }
+    to {
+      height: 114px;
+    }
+  }
+
+  #nav .subnav a {
+    padding: 2px 40px;
+    background: rgb(236, 236, 236);
+    border-top: 1px solid #ccc;
+  }
+
+  .activeMenuBtn {
+    height: auto !important;
+  }
+
+  #sliders .text-content {
+    display: none;
   }
 
   #content .member-img {
