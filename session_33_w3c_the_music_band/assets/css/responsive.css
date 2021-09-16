@@ -8,19 +8,22 @@
 
 /* Phone */
 @media (max-width: 739px) {
+  .col-third {
+    width: 100%;
+  }
+
+  .col-half {
+    width: 100%;
+  }
+
   #nav > li {
     display: block;
   }
-
 
   #nav li:first-child:hover > a {
     background-color: #ccc;
     color: #000;
   }
-
-  #nav > li:hover .subnav {
-    display: block;
-}
 
   #header {
     overflow: hidden;
@@ -37,5 +40,21 @@
 
   #header .mobile-menu-btn {
     display: block;
+  }
+
+  #content .member-img {
+    width: 230px;
+  }
+
+  .contact-container {
+    font-size: 15px;
+  }
+
+  .contact-form div div {
+    margin-bottom: 8px;
+  }
+
+  .contact-form div[class="mt-8"] {
+    margin-top: 0;
   }
 }

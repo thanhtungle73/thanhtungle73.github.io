@@ -322,7 +322,7 @@ html {
 
 /* Tour Places */
 .places-list {
-  margin-top: 32px;
+  margin-top: 16px; /* origin 32px */
 }
 
 .place-img {
@@ -466,7 +466,7 @@ html {
 
 /* Contact */
 .contact-container {
-  margin-top: 48px;
+  margin-top: 32px; /* origin 48px */
   font-size: 18px;
 }
 
@@ -483,6 +483,7 @@ html {
   padding: 10px;
   font-size: 15px;
   border: 1px solid #ccc;
+  word-wrap: break-word;
 }
 
 .map-img img {

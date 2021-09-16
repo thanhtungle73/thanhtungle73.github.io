@@ -14,7 +14,8 @@ const contactModal = $(".contact-modal");
 const contactInputs = $$(".contact-form-item");
 const mobileMenuBtn = $(".mobile-menu-btn");
 const header = $("#header");
-const navListItem = $$("#nav > li");
+const navListItems = $$("#nav > li");
+const subnavListItems = $$('.subnav > li')
 
 const app = {
   currentIndex: 0,
@@ -46,7 +47,7 @@ const app = {
   handleEvent: function () {
     const _this = this;
 
-    //Handle when click Buy Tickets button
+    //Handle when clicking Buy Tickets button
     buyBtns.forEach((element) => {
       element.onclick = function (e) {
         e.preventDefault();
@@ -57,22 +58,22 @@ const app = {
       };
     });
 
-    //Handle when click close ticket modal
+    //handle when clicking close ticket modal
     closeBtn.onclick = function () {
       modal.style.display = "none";
     };
 
-    //Handel to stopPropagation of modal
+    //handle to stopPropagation of modal
     modalContainer.onclick = function (e) {
       e.stopPropagation();
     };
 
-    //Handel when click out side the model
+    //handle when clicking out side the modal
     modal.onclick = function () {
       modal.style.display = "none";
     };
 
-    //Handle check full fill value when click pay btn
+    //handle check full fill value when clicking pay popup btn
     payBtn.onclick = function () {
       let inputValue = Array.from(modalInput).every((e) => {
         return e.value;
@@ -85,7 +86,7 @@ const app = {
       }
     };
 
-    //handel when clicking send button
+    //handle when clicking send contact button
     sendBtn.onclick = function (e) {
       let hasValue = Array.from(contactInputs).every(function (element) {
         return element.value;
@@ -100,22 +101,29 @@ const app = {
       }
     };
 
-    //handle when clicking close btn
+    //handle when clicking close contact popup btn
     contactCloseBtn.onclick = function () {
       contactModal.style.display = "none";
     };
 
     /* Mobile responsive*/
-    //Handle when click mobile menu icon
+    //Handle when clicking mobile menu icon
     mobileMenuBtn.onclick = function () {
       header.classList.toggle("activeMenuBtn");
     };
 
-    Array.from(navListItem).forEach(function (element, index) {
-      if (index > 0 && index < navListItem.length - 1) {
-        navListItem[index].onclick = function () {
+    //Handel when clicking menu items
+    Array.from(navListItems).forEach(function (element, index) {
+      if (index < navListItems.length - 1) {
+        navListItems[index].onclick = function () {
           header.classList.remove("activeMenuBtn");
         };
+      }
+    });
+
+    Array.from(subnavListItems).forEach(function (element) {
+      element.onclick = function (e) {
+        header.classList.remove("activeMenuBtn");
       }
     });
   },
