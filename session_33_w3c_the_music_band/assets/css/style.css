@@ -5,10 +5,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blackPink: #f84a80;
+  --pink: #ffb8c1;
+  --white: #fff;
+  --black: #000;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "Lato", "Arial", sans-serif;
   font-size: 15px;
+}
+
+input,
+button {
+  border-radius: 4px;
 }
 
 /* 
@@ -45,6 +57,22 @@ html {
   margin-top: 16px;
 }
 
+.mt-32 {
+  margin-top: 32px;
+}
+
+.border-radius-4 {
+  border-radius: 4px;
+}
+
+.border-radiust-4 {
+  border-radius: 4px 4px 0 0;
+}
+
+.border-radiusb-4 {
+  border-radius: 0 0 4px 4px;
+}
+
 .pull-right {
   float: right !important;
 }
@@ -53,14 +81,14 @@ html {
   padding: 10px 16px;
   display: inline-block;
   text-decoration: none;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--black);
+  color: var(--white);
   border: none;
 }
 
 .btn:hover {
-  color: #000;
-  background-color: #ccc;
+  color: var(--blackPink);
+
   cursor: pointer;
 }
 
@@ -83,12 +111,20 @@ html {
   /* vì box-sizing là padding và padding sẽ làm giảm kích thước element => căn chỉnh tốt hơn margin */
 }
 
+.col-fourth {
+  width: calc(100% / 4);
+}
+
 .col-third {
   width: calc(100% / 3);
 }
 
 .col-half {
   width: calc(100% / 2);
+}
+
+.col-full {
+  width: 100%;
 }
 
 .modal {
@@ -110,7 +146,7 @@ html {
   left: 0;
   right: 0;
   height: 46px;
-  background-color: #000;
+  background-color: var(--black);
   z-index: 1;
 }
 
@@ -133,7 +169,7 @@ html {
 }
 
 #nav > li > a {
-  color: #fff;
+  color: var(--white);
   text-transform: uppercase;
 }
 
@@ -149,8 +185,7 @@ html {
 }
 
 #nav li:hover > a {
-  background-color: #ccc;
-  color: #000;
+  color: var(--blackPink);
 }
 
 #nav .subnav {
@@ -159,13 +194,13 @@ html {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
+  background-color: var(--black);
   box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.3);
 }
 
 #nav .subnav a {
-  color: #000;
-  padding: 0 16px;
+  color: var(--white);
+  padding: 0 40px;
   line-height: 38px;
 }
 
@@ -184,44 +219,48 @@ html {
 
 #header .menu-icon:hover,
 #header .mobile-menu-btn:hover {
-  background-color: #ccc;
-  color: #000;
+  background-color: var(--blackPink);
 }
 
 #header #search-btn:hover {
   cursor: pointer;
-  background-color: #f44336;
+  background-color: var(--blackPink);
 }
 
 #header .menu-icon,
 #header .search-icon {
-  color: #fff;
+  color: var(--white);
   line-height: 46px;
   font-size: 15px;
 }
 
+#sliders {
+  background-color: #000 !important;
+}
+
 #sliders .slider {
   position: relative;
+  background-color: #000;
 }
 
 #sliders .slider-1 {
   margin-top: 46px;
   padding-top: 50%;
-  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/la.jpg")
+  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/seoul.jpg")
     no-repeat top center/cover;
 }
 
 #sliders .slider-2 {
   margin-top: 46px;
   padding-top: 50%;
-  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/ny.jpg")
+  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/newyork.jpg")
     no-repeat top center/cover;
 }
 
 #sliders .slider-3 {
   margin-top: 46px;
   padding-top: 50%;
-  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/chicago.jpg")
+  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/hongkong.jpg")
     no-repeat top center/cover;
 }
 
@@ -242,6 +281,10 @@ html {
   font-size: 15px;
   font-weight: bolder;
   margin-top: 25px;
+}
+
+#band {
+  border-bottom: 2px solid var(--black);
 }
 
 #content .content-section {
@@ -276,7 +319,7 @@ html {
 }
 
 #content .member-list {
-  margin-top: 48px;
+  margin-top: 30px;
 }
 
 #content .member-name {
@@ -287,15 +330,71 @@ html {
 #content .member-img {
   width: 154px;
   border-radius: 4px;
+  box-shadow: 0 5px 5px rgb(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
 }
+
+#content .member-img:hover {
+  transform: scale(1.1);
+}
+
+.issue-list {
+  margin-top: 40px;
+  background-color: #fff;
+  height: 350px;
+  overflow: scroll;
+}
+
+.issue-list li {
+  list-style-type: none;
+  color: #757575;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.issue-list li img {
+  width: 150px;
+  height: 85px;
+}
+
+.issue-img {
+  float: left;
+}
+
+.issue-summary {
+  padding-left: 166px;
+  font-size: 14px;
+}
+
+.issue-summary p{
+  margin: 8px 0;
+  color: rgb(150, 150, 150);
+}
+
+.issue-container a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.issue-container::after {
+  content: "";
+  display: block;
+  clear: both;
+  }
+
+  .issue-container:hover a{
+    color: var(--blackPink);
+    cursor: pointer;
+  }
 
 .tour-section {
   background-color: #000;
 }
 
 .tickets-list {
-  background-color: #fff;
   margin-top: 40px;
+  background-color: #fff;
 }
 
 .tickets-list li {
@@ -323,18 +422,71 @@ html {
   margin-right: 16px;
 }
 
+.tickets-list > li {
+  position: relative;
+}
+
+.tour-quantity-hover {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  z-index: 2;
+  min-width: 200px;
+  min-height: 24px;
+  padding: 0 8px;
+  visibility: hidden;
+  background: var(--blackPink);
+  color: var(--white);
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.tour-quantity-msg {
+  position: absolute;
+  top: -24%;
+  right: 19%;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  z-index: 2;
+  background: var(--blackPink);
+  color: var(--white);
+}
+
+.quantity:hover .tour-quantity-hover {
+  visibility: visible;
+  animation-name: showTourQuantityMsg;
+  animation-duration: 0.6s;
+  animation-timing-function: ease;
+}
+
+@keyframes showTourQuantityMsg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Tour Places */
 .places-list {
   margin-top: 16px; /* origin 32px */
 }
 
+.place-image-container {
+  overflow: hidden;
+}
+
 .place-img {
   width: 100%;
   display: block;
+  transition: transform 0.3s ease;
 }
 
 .place-img:hover {
   opacity: 0.6;
+  transform: scale(1.1);
 }
 
 .place-body {
@@ -391,21 +543,21 @@ html {
   float: right;
   width: 46px;
   height: 52px;
-  color: #fff;
+  color: var(--white);
   line-height: 52px;
   text-align: center;
 }
 
 .modal-icon-container:hover {
-  background-color: #ccc;
-  color: #000;
+  background-color: var(--blackPink);
+  color: var(--black);
   cursor: pointer;
 }
 
 .modal-header {
   min-height: 129px;
-  background: #009688;
-  color: #fff;
+  background: var(--pink);
+  color: var(--white);
   text-align: center;
   font-size: 30px;
   letter-spacing: 4px;
@@ -439,14 +591,15 @@ html {
   width: 100%;
   margin: 15px 0 9px;
   border: none;
-  background-color: #009688;
-  color: #fff;
+  background-color: var(--blackPink);
+  color: var(--white);
   text-transform: uppercase;
 }
 
 .pay-btn:hover {
-  background: #ccc;
-  color: #000;
+  color: var(--blackPink);
+  background: var(--white);
+  border: 2px solid var(--blackPink);
   cursor: pointer;
 }
 
@@ -469,7 +622,7 @@ html {
 
 /* Contact */
 .contact-container {
-  margin-top: 32px; /* origin 48px */
+  margin-top: 32px;
   font-size: 18px;
 }
 
@@ -489,8 +642,17 @@ html {
   word-wrap: break-word;
 }
 
+.map-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  margin: 0 auto;
+  background-color: var(--pink);
+}
+
 .map-img img {
-  width: 100%;
+  width: 80%;
 }
 
 /* Contact modal */
@@ -534,7 +696,7 @@ html {
 .contact-modal-header {
   min-height: 50px;
   padding: 0 20px;
-  background: #009688;
+  background: var(--pink);
   color: #fff;
   font-size: 15px;
   line-height: 50px;
@@ -544,9 +706,11 @@ html {
 }
 
 .contact-modal-body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   min-height: 100px;
   font-size: 15px;
-  line-height: 100px;
 }
 
 .contact-close-popup {
@@ -565,13 +729,16 @@ html {
 }
 
 .footer-icon a {
+  display: inline-block;
   text-decoration: none;
   color: #000;
+  transition: transform 0.2s ease;
 }
 
 .footer-copy-right a:hover,
 .footer-icon a:hover {
-  opacity: 0.6;
+  color: var(--blackPink);
+  transform: scale(1.2);
 }
 
 .footer-copy-right {

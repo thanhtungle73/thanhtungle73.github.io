@@ -8,12 +8,12 @@
 
 /* Phone */
 @media (max-width: 739px) {
-  .col-third {
+  .s-col-full {
     width: 100%;
   }
 
-  .col-half {
-    width: 100%;
+  .s-text-center {
+    text-align: center;
   }
 
   #header {
@@ -26,6 +26,10 @@
 
   #header .mobile-menu-btn {
     display: block;
+  }
+
+  .activeMenuBtn {
+    height: auto !important;
   }
 
   #nav {
@@ -43,7 +47,7 @@
   #nav .subnav {
     position: inherit;
     animation-name: dropSubMenu;
-    animation-duration: 0.3s;
+    animation-duration: 0.2s;
     animation-timing-function: linear;
   }
 
@@ -58,12 +62,7 @@
 
   #nav .subnav a {
     padding: 2px 40px;
-    background: rgb(236, 236, 236);
-    border-top: 1px solid #ccc;
-  }
-
-  .activeMenuBtn {
-    height: auto !important;
+    background: #000;
   }
 
   #sliders .text-content {
@@ -71,9 +70,45 @@
   }
 
   #content .member-img {
-    width: 230px;
+    width: 60%;
   }
 
+  .issue-summary .summary {
+    display: none;
+  }
+
+  .modal-container {
+    position: absolute;
+    top: 50px;
+    background: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 300px;
+    animation-name: drop;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+  
+  @keyframes drop {
+    from {
+      top: -200px;
+      opacity: 0;
+    }
+    to {
+      top: 50px;
+      opacity: 1;
+    }
+  }
+
+  .modal-header {
+    min-height: 100px;
+    line-height: 100px;
+}
+
+.pay-btn {
+  height: 48px;
+}
   .contact-container {
     font-size: 15px;
   }

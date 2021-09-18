@@ -17,6 +17,7 @@ const header = $("#header");
 const navListItems = $$("#nav > li > a");
 const subnavListItems = $$(".subnav > li");
 const subnav = $(".subnav");
+const contactModalMsg = $(".contact-modal-value");
 
 const app = {
   currentIndex: 0,
@@ -84,29 +85,32 @@ const app = {
       modal.style.display = "none";
     };
 
-    //handle check full fill value when clicking pay popup btn
+    //handle check full fill and valid value when clicking pay btn
     payBtn.onclick = function () {
-      let inputValue = Array.from(modalInput).every((e) => {
-        return e.value;
+      let inputValidValue = Array.from(modalInput).every((e) => {
+        return e.checkValidity();
       });
 
-      if (!inputValue) {
-        warningMsg.style.visibility = "visible";
-      } else {
+      if (inputValidValue) {
         _this.resetModal();
+      } else {
+        warningMsg.style.visibility = "visible";
       }
     };
 
     //handle when clicking send contact button
     sendBtn.onclick = function (e) {
-      let hasValue = Array.from(contactInputs).every(function (element) {
-        return element.value;
+      let hasValidValue = Array.from(contactInputs).every(function (element) {
+        return element.checkValidity();
       });
 
-      if (hasValue) {
+      if (hasValidValue) {
         e.preventDefault();
         contactModal.style.display = "flex";
         Array.from(contactInputs).forEach(function (element) {
+          if (element.getAttribute("placeholder") === "Message") {
+            contactModalMsg.innerText = element.value;
+          }
           return (element.value = "");
         });
       }
@@ -132,6 +136,7 @@ const app = {
           e.target.nextElementSibling &&
           e.target.nextElementSibling.classList.contains("subnav");
 
+        //Handle and check is parent menu
         if (isParent) {
           toggleSubMenu();
           e.preventDefault();
