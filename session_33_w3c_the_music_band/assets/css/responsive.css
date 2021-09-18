@@ -2,12 +2,52 @@
 @media (min-width: 1024px) {
 }
 
+/* Tablet & Phone*/
+@media (max-width: 1023px) {
+  .btn {
+    padding: 15px 16px;
+  }
+
+  #nav .subnav a {
+    padding: 5px 24px;
+  }
+
+  .contact-form {
+    margin-top: 8px;
+  }
+
+  .contact-form-item {
+    padding: 14px 10px;
+  }
+
+  .contact-infor {
+    line-height: 2;
+  }
+
+  .footer-icon a {
+    padding: 0 8px;
+  }
+
+  .footer-copy-right {
+    display: inline-block;
+    padding: 12px 0;
+  }
+
+  .modal-body .modal-input {
+    padding: 14px 8px;
+  }
+}
+
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
 }
 
 /* Phone */
 @media (max-width: 739px) {
+  .contact-form {
+    margin-top: 16px;
+  }
+
   .s-col-full {
     width: 100%;
   }
@@ -61,7 +101,7 @@
   }
 
   #nav .subnav a {
-    padding: 2px 40px;
+    padding: 5px 40px;
     background: #000;
   }
 
@@ -89,7 +129,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
   }
-  
+
   @keyframes drop {
     from {
       top: -200px;
@@ -104,11 +144,11 @@
   .modal-header {
     min-height: 100px;
     line-height: 100px;
-}
+  }
 
-.pay-btn {
-  height: 48px;
-}
+  .pay-btn {
+    height: 48px;
+  }
   .contact-container {
     font-size: 15px;
   }

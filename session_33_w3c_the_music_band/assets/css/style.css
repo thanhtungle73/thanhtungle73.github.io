@@ -200,7 +200,7 @@ button {
 
 #nav .subnav a {
   color: var(--white);
-  padding: 0 40px;
+  padding: 0 24px;
   line-height: 38px;
 }
 
@@ -367,7 +367,7 @@ button {
   font-size: 14px;
 }
 
-.issue-summary p{
+.issue-summary p {
   margin: 8px 0;
   color: rgb(150, 150, 150);
 }
@@ -381,12 +381,12 @@ button {
   content: "";
   display: block;
   clear: both;
-  }
+}
 
-  .issue-container:hover a{
-    color: var(--blackPink);
-    cursor: pointer;
-  }
+.issue-container:hover a {
+  color: var(--blackPink);
+  cursor: pointer;
+}
 
 .tour-section {
   background-color: #000;
@@ -630,6 +630,14 @@ button {
   line-height: 1.5;
 }
 
+.contact-infor a {
+  opacity: 0.8;
+}
+
+.contact-infor a:hover {
+  opacity: 1;
+}
+
 .contact-icon {
   width: 30px;
 }
@@ -666,7 +674,7 @@ button {
   width: 300px;
   min-height: 150px;
   max-width: calc(100% - 64px);
-  background: #fff;
+  background: var(--white);
   animation-name: show;
   animation-timing-function: ease-out;
   animation-duration: 0.3s;
@@ -685,7 +693,7 @@ button {
 
 .contact-modal-icon-container {
   padding: 16px;
-  color: #fff;
+  color: var(--white);
 }
 
 .contact-modal-icon-container:hover {
@@ -697,7 +705,7 @@ button {
   min-height: 50px;
   padding: 0 20px;
   background: var(--pink);
-  color: #fff;
+  color: var(--white);
   font-size: 15px;
   line-height: 50px;
   font-weight: 500;
@@ -730,6 +738,7 @@ button {
 
 .footer-icon a {
   display: inline-block;
+  padding: 0 4px;
   text-decoration: none;
   color: #000;
   transition: transform 0.2s ease;
