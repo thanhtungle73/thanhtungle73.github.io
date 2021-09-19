@@ -246,22 +246,19 @@ button {
 #sliders .slider-1 {
   margin-top: 46px;
   padding-top: 50%;
-  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/seoul.jpg")
-    no-repeat top center/cover;
+  background: url("../img/Sliders/seoul.jpg") no-repeat top center/cover;
 }
 
 #sliders .slider-2 {
   margin-top: 46px;
   padding-top: 50%;
-  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/newyork.jpg")
-    no-repeat top center/cover;
+  background: url("../img/Sliders/newyork.jpg") no-repeat top center/cover;
 }
 
 #sliders .slider-3 {
   margin-top: 46px;
   padding-top: 50%;
-  background: url("/session_33_w3c_the_music_band/assets/img/Sliders/hongkong.jpg")
-    no-repeat top center/cover;
+  background: url("../img/Sliders/hongkong.jpg") no-repeat top center/cover;
 }
 
 #sliders .text-content {
@@ -281,6 +278,7 @@ button {
   font-size: 15px;
   font-weight: bolder;
   margin-top: 25px;
+  text-shadow: 0 0 1px var(--black);
 }
 
 #band {
