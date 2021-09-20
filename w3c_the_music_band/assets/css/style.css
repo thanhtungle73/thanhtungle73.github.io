@@ -142,7 +142,7 @@ button {
 .confirm-modal-container {
   position: absolute;
   top: 300px;
-  width: 300px;
+  max-width: 300px;
   min-height: 150px;
   max-width: calc(100% - 64px);
   background: var(--white);
@@ -441,7 +441,6 @@ button {
   clear: both;
 }
 
-.issue-container:hover,
 .issue-container:hover a {
   color: var(--blackPink);
   cursor: pointer;
