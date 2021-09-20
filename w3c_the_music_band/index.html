@@ -243,8 +243,7 @@
                     <div class="row places-list">
                         <div class="col col-third s-col-full mt-16">
                             <div class="place-image-container border-radius-4">
-                                <img src="./assets/img/tickets/newyork-2.jpg" alt="New York"
-                                    class="place-img">
+                                <img src="./assets/img/tickets/newyork-2.jpg" alt="New York" class="place-img">
                             </div>
                             <div class="place-body border-radiusb-4">
                                 <h2 class="place-heading">New York</h2>
@@ -258,8 +257,7 @@
 
                         <div class="col col-third s-col-full mt-16">
                             <div class="place-image-container border-radius-4">
-                                <img src="./assets/img/tickets/seoul.jpeg" alt="seoul"
-                                    class="place-img">
+                                <img src="./assets/img/tickets/seoul.jpeg" alt="seoul" class="place-img">
                             </div>
                             <div class="place-body border-radiusb-4">
                                 <h2 class="place-heading">Seoul</h2>
@@ -273,8 +271,7 @@
 
                         <div class="col col-third s-col-full mt-16">
                             <div class="place-image-container border-radius-4">
-                                <img src="./assets/img/tickets/tokyo.jpg" alt="Tokyo"
-                                    class="place-img">
+                                <img src="./assets/img/tickets/tokyo.jpg" alt="Tokyo" class="place-img">
                             </div>
                             <div class="place-body border-radiusb-4">
                                 <h2 class="place-heading">Tokyo</h2>
@@ -379,10 +376,12 @@
                     </label>
                     <input id="email" required type="email" class="modal-input" placeholder="Enter your email">
 
-                    <button class="pay-btn">Pay
+                    <button type="button" class="pay-btn">Pay
                         <i class="fas fa-check"></i>
                     </button>
-                    <p class="warning-msg">Please enter all valid information</p>
+                    <p class="warning-msg">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Please enter valid number of tickets and your email</p>
             </div>
             </form>
 
@@ -394,19 +393,36 @@
         <div class="clear-fix"></div>
     </div>
 
+    <div class="modal ticket-modal">
+        <div class="confirm-modal-container">
+            <header class="confirm-modal-header">
+                <i class="fas fa-check-circle"></i>
+                Tickets Booking Successful
+            </header>
+
+            <div class="confirm-modal-body text-center">
+                <p>The tickets will be sent to your email. Thank You!</p>
+            </div>
+
+            <div class="ticket-close-popup confirm-close-popup text-center">
+                <button class="btn">Close</button>
+            </div>
+        </div>
+    </div>
+
     <div class="modal contact-modal">
-        <div class="contact-modal-container">
-            <header class="contact-modal-header">
+        <div class="confirm-modal-container">
+            <header class="confirm-modal-header">
                 <i class="fas fa-check-circle"></i>
                 Successful Submission
             </header>
 
-            <div class="contact-modal-body text-center">
-                <p>Your message "
-                <p class="contact-modal-value"></p>" was submitted successfully</p>
+            <div class="confirm-modal-body text-center">
+                <p>Your message
+                <p class="confirm-modal-value"></p> has been sent successfully. We will respond via email.</p>
             </div>
 
-            <div class="contact-close-popup text-center">
+            <div class="contact-close-popup confirm-close-popup text-center">
                 <button class="btn">Close</button>
             </div>
         </div>

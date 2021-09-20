@@ -1,22 +1,24 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-const slides = $$(".slider");
-const modal = $(".place-modal");
-const buyBtns = $$(".place-buy-btn");
-const closeBtn = $(".modal-icon-container");
-const payBtn = $(".pay-btn");
-const modalInput = $$(".modal-input");
-const warningMsg = $(".warning-msg");
-const modalContainer = $(".modal-container");
-const sendBtn = $(".content-section button");
-const contactCloseBtn = $(".contact-close-popup");
-const contactModal = $(".contact-modal");
-const contactInputs = $$(".contact-form-item");
 const mobileMenuBtn = $(".mobile-menu-btn");
 const header = $("#header");
 const navListItems = $$("#nav > li > a");
 const subnavListItems = $$(".subnav > li");
 const subnav = $(".subnav");
+const slides = $$(".slider");
+const buyBtns = $$(".place-buy-btn");
+const modalContainer = $(".modal-container");
+const sendBtn = $(".content-section button");
+const contactInputs = $$(".contact-form-item");
+const modal = $(".place-modal");
+const closeBtn = $(".modal-icon-container");
+const modalInput = $$(".modal-input");
+const payBtn = $(".pay-btn");
+const warningMsg = $(".warning-msg");
+const contactModal = $(".contact-modal");
+const ticketModal = $(".ticket-modal");
+const ticketCloseBtn = $(".ticket-close-popup");
+const contactCloseBtn = $(".contact-close-popup");
 const contactModalMsg = $(".contact-modal-value");
 
 const app = {
@@ -93,6 +95,8 @@ const app = {
 
       if (inputValidValue) {
         _this.resetModal();
+        ticketModal.style.display = "flex";
+        modal.style.display = "none";
       } else {
         warningMsg.style.visibility = "visible";
       }
@@ -109,16 +113,21 @@ const app = {
         contactModal.style.display = "flex";
         Array.from(contactInputs).forEach(function (element) {
           if (element.getAttribute("placeholder") === "Message") {
-            contactModalMsg.innerText = element.value;
+            contactModalMsg.innerText = `"${element.value}"`;
           }
           return (element.value = "");
         });
       }
     };
 
-    //handle when clicking close contact popup btn
+    //handle when clicking close contact confirm popup btn
     contactCloseBtn.onclick = function () {
       contactModal.style.display = "none";
+    };
+
+    //handle when clicking close ticket confirm popup btn
+    ticketCloseBtn.onclick = function () {
+      ticketModal.style.display = "none";
     };
 
     /* Mobile responsive*/

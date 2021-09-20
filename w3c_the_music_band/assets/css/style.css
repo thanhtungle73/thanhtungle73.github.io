@@ -36,7 +36,7 @@ button {
 4. Kiểu dáng (kiểu chữ, hình tròn, vuông,...
  */
 
-/* Common */
+/* Common Classes*/
 .clear-fix {
   clear: both;
 }
@@ -137,6 +137,66 @@ button {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.3);
+}
+
+.confirm-modal-container {
+  position: absolute;
+  top: 300px;
+  width: 300px;
+  min-height: 150px;
+  max-width: calc(100% - 64px);
+  background: var(--white);
+  animation-name: show;
+  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+}
+
+@keyframes show {
+  from {
+    top: 0;
+    opacity: 0.3;
+  }
+  to {
+    top: 300px;
+    opacity: 1;
+  }
+}
+
+.confirm-modal-icon-container {
+  padding: 16px;
+  color: var(--white);
+}
+
+.confirm-modal-icon-container:hover {
+  background-color: #ccc;
+  color: var(--black);
+}
+
+.confirm-modal-header {
+  min-height: 50px;
+  padding: 0 20px;
+  background: var(--pink);
+  color: var(--white);
+  font-size: 15px;
+  line-height: 50px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.confirm-modal-body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100px;
+  margin: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.confirm-close-popup {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 /* main */
@@ -381,9 +441,11 @@ button {
   clear: both;
 }
 
+.issue-container:hover,
 .issue-container:hover a {
   color: var(--blackPink);
   cursor: pointer;
+  background: #ccc;
 }
 
 .tour-section {
@@ -661,67 +723,13 @@ button {
   width: 80%;
 }
 
-/* Contact modal */
-.contact-modal {
+/* Contact & Ticket confirm modal */
+.ticket-modal {
   display: none;
 }
 
-.contact-modal-container {
-  position: absolute;
-  top: 300px;
-  width: 300px;
-  min-height: 150px;
-  max-width: calc(100% - 64px);
-  background: var(--white);
-  animation-name: show;
-  animation-timing-function: ease-out;
-  animation-duration: 0.3s;
-}
-
-@keyframes show {
-  from {
-    top: 0;
-    opacity: 0.3;
-  }
-  to {
-    top: 300px;
-    opacity: 1;
-  }
-}
-
-.contact-modal-icon-container {
-  padding: 16px;
-  color: var(--white);
-}
-
-.contact-modal-icon-container:hover {
-  background-color: #ccc;
-  color: #000;
-}
-
-.contact-modal-header {
-  min-height: 50px;
-  padding: 0 20px;
-  background: var(--pink);
-  color: var(--white);
-  font-size: 15px;
-  line-height: 50px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-.contact-modal-body {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100px;
-  font-size: 15px;
-}
-
-.contact-close-popup {
-  width: 100%;
-  margin-bottom: 20px;
+.contact-modal {
+  display: none;
 }
 
 /* Footer */
