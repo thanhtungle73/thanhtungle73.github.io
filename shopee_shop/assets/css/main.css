@@ -1,0 +1,135 @@
+
+.header {
+  height: 120px;
+  background: linear-gradient(180deg, #f53e2d, #fe6332);
+}
+
+.header__navbar {
+  justify-content: space-between;
+}
+
+.header__navbar-list {
+  list-style-type: none;
+  padding: 0; /* Ul mac ding co padding ne ta bo padding cho no */
+  margin-top: 8px;
+}
+
+.header__navbar-item {
+  position: relative;
+  padding: 0 0.7rem 0 0.5rem;
+}
+
+.header__navbar-item,
+.header__navbar-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.header__navbar-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__navbar--separate {
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.header__navbar-item:hover,
+.header__navbar-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header__navbar-item--prevent:hover {
+  color: rgba(255, 255, 255);
+}
+
+.header__navbar-icon {
+  font-size: 1.6rem;
+  margin: 0 4px;
+}
+
+/*Header QR code*/
+.hearder__qr-container {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  width: 186px;
+  padding: 2px;
+  z-index: 100;
+  background: var(--white-color);
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  animation: opacityIncrease 0.2s ease-out;
+}
+
+.hearder__qr-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 15px;
+}
+
+.hearder__qr-container-qrcode-img {
+  width: 100%;
+}
+
+.header__navbar-link--hover:hover > .hearder__qr-container {
+  display: inline-flex;
+}
+
+.hearder__qr-container-apps {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 11px;
+}
+
+.hearder__qr-container-apps-img {
+  width: 74px;
+  padding: 2px 0;
+}
+
+/* Header Notification */
+.header__notification {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 100%;
+  right: 8%;
+  width: 400px;
+  height: 500px;
+  background: #fff;
+  padding: 0 8px;
+}
+
+.header__notification-title {
+  height: 40px;
+  line-height: 40px;
+  font: 1.6rem;
+  color: rgba(0,0,0,0.3);
+  font-weight: 600;
+}
+
+.header-notification-content {
+  flex: 1;
+}
+
+.header__notification-more {
+  height: 40px;
+  width: 100%;
+  border: none;
+  background-color: #fcfcfc;
+}
+
+.header__notification-more:hover {
+background-color: #fafafa;
+}
