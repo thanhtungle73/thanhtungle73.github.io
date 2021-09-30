@@ -119,12 +119,12 @@
 
 @keyframes scaleIncrease {
   from {
-      opacity: 0;
-      transform: scale(0);
+    opacity: 0;
+    transform: scale(0);
   }
   to {
-      opacity: 1;
-      transform: scale(100%);
+    opacity: 1;
+    transform: scale(100%);
   }
 }
 
@@ -245,9 +245,10 @@
 
 .modal__body {
   position: relative;
-  margin:auto;
+  margin: auto;
   z-index: 1;
   background-color: #fff;
+  border-radius: 2px;
 }
 
 /* Modal Login Form */
@@ -307,8 +308,105 @@
 }
 
 .modal__login-input--btn {
-  background-color: rgba(238,77,45, 0.7);
+  background-color: rgba(238, 77, 45, 0.7);
   color: var(--white-color);
   font-weight: 500;
   cursor: not-allowed;
+  margin-bottom: 12px;
+}
+
+.modal__login-options {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.modal__login-option {
+  font-size: 1.2rem;
+  color: #05a;
+  text-decoration: none;
+}
+
+.modal__login-separates {
+  display: flex;
+  padding: 0 30px;
+}
+
+.modal__login-separate {
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+  margin: auto;
+}
+
+.modal__login-separate-text {
+  padding: 0 20px;
+  font-size: 1.2rem;
+  color: #bdbdbd;
+  text-transform: uppercase;
+}
+
+.modal__login-ways {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.modal__login-way {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.4rem;
+  color: var(--white-color);
+  padding: 0;
+}
+
+.modal__login-way-icon {
+  font-size: 2.2rem;
+  color: var(--white-color);
+  padding: 0 10px;
+}
+
+.modal__login-way--facebook {
+  background-color: #1877f2;
+}
+
+.modal__login-way--apple {
+  background-color: var(--black-color);
+}
+
+.modal__login-way--google {
+  background-color: #4285f4;
+}
+
+.modal__login-way-face {
+  padding: 12px 10px 12px 0;
+}
+
+.modal__login-way-google {
+  padding: 12px 14px 12px 3px;
+}
+
+.modal__login-way-apple {
+  padding: 12px 20px 12px 10px;
+}
+
+.modal__login-help {
+  display: flex;
+  justify-content: center;
+  margin: 22px 0;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.modal__login-help-text {
+  color: #bdbdbd;
+}
+
+.modal__login-help-link {
+  text-decoration: none;
+  color: rgb(238, 77, 45);
+  margin-left: 4px;
 }
