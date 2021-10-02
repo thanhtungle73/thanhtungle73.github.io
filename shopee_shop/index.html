@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4/css/all.min.css">
-    <title>Shopee Việt Nam | Mua và Bán Trên Ứng Dụng Di Động hoặc Website</title>
+    <title>LTT Shop Việt Nam | Mua và Bán Trên Ứng Dụng Di Động hoặc Website</title>
 </head>
 
 <body>
@@ -52,10 +52,10 @@
                         </li>
 
                         <li class="header__navbar-item header__navbar-item--prevent">Kết nối
-                            <a href="#" class="header__navbar-link header__navbar-link--prevent">
+                            <a href="https://www.facebook.com/" class="header__navbar-link header__navbar-link--prevent" target="blank">
                                 <i class="fab fa-facebook header__navbar-icon"></i>
                             </a>
-                            <a href="#" class="header__navbar-link header__navbar-link--prevent">
+                            <a href="https://www.instagram.com/" class="header__navbar-link header__navbar-link--prevent" target="blank">
                                 <i class="fab fa-instagram header__navbar-icon"></i>
                             </a>
                         </li>
@@ -160,9 +160,9 @@
                                 <i class="far fa-question-circle header__navbar-icon"></i>
                                 Hỗ Trợ
                             </a></li>
-                        <li class="header__navbar-item header__navbar--separate"><a href="#"
+                        <li class="header__navbar-item header__navbar-register header__navbar--separate"><a href="#"
                                 class="header__navbar-link">Đăng Ký</a></li>
-                        <li class="header__navbar-item"><a href="#" class="header__navbar-link">Đăng Nhập</a></li>
+                        <li class="header__navbar-item header__navbar-login"><a href="#" class="header__navbar-link">Đăng Nhập</a></li>
                     </ul>
                 </nav>
             </div>
@@ -176,67 +176,129 @@
     <div class="modal">
         <div class="modal__overlay"></div>
         <div class="modal__body">
-            <div class="modal__inner">
-                <!-- Login Form -->
-                <div class="login-form">
-                    <div class="login-form__container">
-                        <div class="login-form__header">
-                            <h3 class="login-form__heading">Đăng Nhập</h3>
-                        </div>
-
-                        <div class="login-form__inputs">
-                            <div class="login-form__group">
-                                <input type="text" placeholder="Email/Số điện thoại/Tên đăng nhập"
-                                    class="login-form__input">
-                            </div>
-                            <div class="login-form__group">
-                                <input type="password" placeholder="Mật khẩu" class="login-form__input">
-                                <i class="fas fa-eye-slash login-form__password-icon"></i>
-                            </div>
-
-                            <div class="login-form__group">
-                                <input type="submit" value="ĐĂNG NHẬP" disabled
-                                    class="login-form__input login-form__input--btn">
-                            </div>
-                        </div>
-
-                        <div class="login-form__options">
-                            <a href="#" class="login-form__option">Quên mật khẩu</a>
-                            <a href="#" class="login-form__option">Đăng nhập với SMS</a>
-                        </div>
-
-                        <div class="login-form__separates">
-                            <div class="login-form__separate"></div>
-                            <p class="login-form__separate-text">Hoặc</p>
-                            <div class="login-form__separate"></div>
-                        </div>
-
-                        <div class="login-form__socials">
-                            <button class="login-form__socials-btn login-form__socials-btn--facebook">
-                                <i class="fab fa-facebook login-form__socials-btn-icon"></i>
-                                <span class="login-form__socials-label">Facebook</span>
-                            </button>
-                            <button class="login-form__socials-btn login-form__socials-btn--google">
-                                <i class="fab fa-google login-form__socials-btn-icon"></i>
-                                <span class="login-form__socials-label">Google</span>
-                            </button>
-                            <button class="login-form__socials-btn login-form__socials-btn--apple">
-                                <i class="fab fa-apple login-form__socials-btn-icon"></i>
-                                <span class="login-form__socials-label">Apple</span>
-                            </button>
-                        </div>
-
-                        <div class="login-form__help">
-                            <p class="login-form__help-text">Bạn mới biết đến Shopee? <a href="#"
-                                    class="login-form__help-link">Đăng ký</a></p>
-                        </div>
-                    </div>
+            <!-- Register Form -->
+            <div class="auth-form register-form">
+                <div class="auth-form__closeBtn">
+                    <i class="fas fa-times auth-form__closeBtn-icon"></i>
                 </div>
 
-                <!-- Register Form -->
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng Ký</h3>
+                    </div>
+
+                    <div class="auth-form__inputs">
+                        <div class="auth-form__group">
+                            <input type="text" placeholder="Số điện thoại"
+                                class="auth-form__input auth-form__input-js">
+                        </div>
+
+                        <div class="auth-form__group">
+                            <input type="submit" value="TIẾP THEO" disabled
+                                class="auth-form__input auth-form__input-btn-js auth-form__input--btn">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__separates">
+                        <div class="auth-form__separate"></div>
+                        <p class="auth-form__separate-text">Hoặc</p>
+                        <div class="auth-form__separate"></div>
+                    </div>
+
+                    <div class="auth-form__socials">
+                        <button class="btn auth-form__socials-btn auth-form__socials-btn--facebook">
+                            <i class="fab fa-facebook auth-form__socials-btn-icon"></i>
+                            <span class="auth-form__socials-label">Facebook</span>
+                        </button>
+                        <button class="btn auth-form__socials-btn auth-form__socials-btn--google">
+                            <div class="auth-form__socials-btn-icon auth-form__socials-google-svg"></div>
+                            <span class="auth-form__socials-label">Google</span>
+                        </button>
+                        <button class="btn auth-form__socials-btn auth-form__socials-btn--apple">
+                            <i class="fab fa-apple auth-form__socials-btn-icon"></i>
+                            <span class="auth-form__socials-label">Apple</span>
+                        </button>
+                    </div>
+
+                    <div class="auth-form__policy">
+                        <p class="auth-form__policy-content">
+                            Bằng việc đăng kí, bạn đã đồng ý với Shopee về
+                            <a href="#" class="auth-form__policy-link">Điều khoản dịch vụ </a> &
+                            <a href="#" class="auth-form__policy-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+
+                    <div class="auth-form__help">
+                        <p class="auth-form__help-text">Bạn đã có tài khoản? <a href="#"
+                                class="auth-form__help-link auth-form__help-login">Đăng nhập</a></p>
+                    </div>
+                </div>
             </div>
+
+
+            <!-- Login Form -->
+            <div class="auth-form login-form">
+                <div class="auth-form__closeBtn">
+                    <i class="fas fa-times auth-form__closeBtn-icon"></i>
+                </div>
+
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng Nhập</h3>
+                    </div>
+
+                    <div class="auth-form__inputs">
+                        <div class="auth-form__group">
+                            <input type="text" placeholder="Email/Số điện thoại/Tên đăng nhập"
+                                class="auth-form__input">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" placeholder="Mật khẩu" class="auth-form__input">
+                            <i class="fas fa-eye-slash auth-form__password-icon"></i>
+                        </div>
+
+                        <div class="auth-form__group">
+                            <input type="submit" value="ĐĂNG NHẬP" disabled
+                                class="auth-form__input auth-form__input--btn">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__options">
+                        <a href="#" class="auth-form__option">Quên mật khẩu</a>
+                        <a href="#" class="auth-form__option">Đăng nhập với SMS</a>
+                    </div>
+
+                    <div class="auth-form__separates">
+                        <div class="auth-form__separate"></div>
+                        <p class="auth-form__separate-text">Hoặc</p>
+                        <div class="auth-form__separate"></div>
+                    </div>
+
+                    <div class="auth-form__socials">
+                        <button class="btn auth-form__socials-btn auth-form__socials-btn--facebook">
+                            <i class="fab fa-facebook auth-form__socials-btn-icon"></i>
+                            <span class="auth-form__socials-label">Facebook</span>
+                        </button>
+                        <button class="btn auth-form__socials-btn auth-form__socials-btn--google">
+                            <div class="auth-form__socials-btn-icon auth-form__socials-google-svg"></div>
+                            <span class="auth-form__socials-label">Google</span>
+                        </button>
+                        <button class="btn auth-form__socials-btn auth-form__socials-btn--apple">
+                            <i class="fab fa-apple auth-form__socials-btn-icon"></i>
+                            <span class="auth-form__socials-label">Apple</span>
+                        </button>
+                    </div>
+
+                    <div class="auth-form__help">
+                        <p class="auth-form__help-text">Bạn mới biết đến Shopee? <a href="#"
+                                class="auth-form__help-link auth-form__help-register">Đăng ký</a></p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

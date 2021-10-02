@@ -226,78 +226,78 @@
   background-color: #fafafa;
 }
 
-/* Modal */
-.modal {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.modal__overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.modal__body {
-  position: relative;
-  margin: auto;
-  z-index: 1;
-  background-color: #fff;
-  border-radius: 2px;
-}
-
 /* Modal Login Form */
-.login-form {
+.auth-form {
+  position: relative;
+  display: none;
   width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.login-form__header {
+.active-form {
+  display: block !important;
+}
+
+.auth-form__closeBtn {
+  float: right;
+  padding: 12px 16px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.auth-form__closeBtn-icon {
+  font-size: 2rem;
+  color: #ccc;
+}
+
+.auth-form__container {
+  padding: 0 30px;
+}
+
+.auth-form__header {
   width: 100%;
-  padding: 32px 30px;
+  padding: 39px 0;
 }
 
-.login-form__heading {
+.auth-form__heading {
   margin: 0;
   font-size: 2rem;
   font-weight: 500;
   color: var(--text-color);
 }
 
-.login-form__inputs {
+.auth-form__inputs {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 30px;
   position: relative;
 }
 
-.login-form__group {
+.auth-form__group {
   width: 100%;
 }
 
-.login-form__input {
+.auth-form__input {
   width: 100%;
   height: 40px;
   margin-bottom: 32px;
-  padding: 0 16px;
-  font-size: 1.4rem;
   border: 1px solid #e8e8e8;
   border-radius: 2px;
+  outline: none;
+  padding: 0 16px;
+  font-size: 1.4rem;
 }
 
-.login-form__input:focus {
-  outline:1px solid var(--black-color);
+.auth-form__input:focus {
+  border-color: #777;
 }
 
-.login-form__input::placeholder {
+.auth-form__input::placeholder {
   color: #bdbdbd;
 }
 
-.login-form__password-icon {
+.auth-form__password-icon {
   position: relative;
   float: right;
   margin-top: -60px;
@@ -305,110 +305,130 @@
   z-index: 2;
   font-size: 1.6rem;
   color: #bdbdbd;
+  cursor: pointer;
 }
 
-.login-form__input--btn {
+.auth-form__input--btn {
   background-color: rgba(238, 77, 45, 0.7);
   color: var(--white-color);
-  font-weight: 500;
   cursor: not-allowed;
   margin-bottom: 12px;
 }
 
-.login-form__options {
+.auth-form__options {
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
 }
 
-.login-form__option {
+.auth-form__option {
   font-size: 1.2rem;
-  color: #05a;
+  color: #0055aa;
   text-decoration: none;
 }
 
-.login-form__separates {
+.auth-form__separates {
   display: flex;
-  padding: 0 30px;
 }
 
-.login-form__separate {
+.auth-form__separate {
   flex: 1;
   height: 1px;
   background: #e0e0e0;
   margin: auto;
 }
 
-.login-form__separate-text {
+.auth-form__separate-text {
   padding: 0 20px;
   font-size: 1.2rem;
   color: #bdbdbd;
   text-transform: uppercase;
 }
 
-.login-form__socials {
+.auth-form__socials {
   display: flex;
-  padding: 0 30px;
 }
 
-.login-form__socials-btn {
+.auth-form__socials-btn {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex: 1;
   height: 40px;
-  border: none;
-  border-radius: 2px;
-  font-size: 1.4rem;
   color: var(--white-color);
   padding: 0 10px;
-  flex: 1;
 }
 
-.login-form__socials-btn + .login-form__socials-btn {
+.auth-form__socials-btn + .auth-form__socials-btn {
   margin-left: 10px;
 }
 
-.login-form__socials-btn:hover {
+.auth-form__socials-btn:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.login-form__socials-btn-icon {
+.auth-form__socials-btn-icon {
   font-size: 2.2rem;
   color: var(--white-color);
 }
 
-.login-form__socials-label {
+.auth-form__socials-google-svg {
+  flex: 1;
+  min-height: 88%;
+  background: var(--white-color) url("../img/modal/google_btn.svg") no-repeat center/contain;
+  border-radius: 2px;
+}
+
+.auth-form__socials-label {
   padding-left: 8px;
   margin: auto;
 }
 
-.login-form__socials-btn--facebook {
+.auth-form__socials-btn--facebook {
   background-color: #1877f2;
 }
 
-.login-form__socials-btn--google {
+.auth-form__socials-btn--google {
   background-color: #4285f4;
+  display: flex;
+  padding-left: 2px; 
 }
 
-.login-form__socials-btn--apple {
+.auth-form__socials-btn--apple {
   background-color: var(--black-color);
 }
 
-.login-form__help {
+.auth-form__policy {
+  margin-top: 32px;
+}
+
+.auth-form__policy-content {
+  padding: 0 32px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.auth-form__policy-link {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.auth-form__help {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 32px 0;
   align-items: center;
   font-size: 1.4rem;
 }
 
-.login-form__help-text {
+.auth-form__help-text {
   color: #bdbdbd;
   margin: 0;
 }
 
-.login-form__help-link {
+.auth-form__help-link {
   text-decoration: none;
-  color: rgb(238, 77, 45);
+  color: var(--primary-color);
 }
