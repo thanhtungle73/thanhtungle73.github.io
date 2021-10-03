@@ -3,6 +3,10 @@
     --black-color: #000;
     --text-color: #333;
     --primary-color: #ee4d2d;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-search-height: calc(var(--header-height) - var(--navbar-height));
 }
 
 *{
@@ -79,7 +83,7 @@ html {
 
 /* Button */
 .btn {
-    min-width: 90px;
+    min-width: 60px;
     height: 34px;
     text-decoration: none;
     border: none;

@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4/css/all.min.css">
-    <title>LTT Shop Việt Nam | Mua và Bán Trên Ứng Dụng Di Động hoặc Website</title>
+    <title>LTT Shop</title>
 </head>
 
 <body>
@@ -51,13 +51,18 @@
                             </div>
                         </li>
 
-                        <li class="header__navbar-item header__navbar-item--prevent">Kết nối
-                            <a href="https://www.facebook.com/" class="header__navbar-link header__navbar-link--prevent" target="blank">
-                                <i class="fab fa-facebook header__navbar-icon"></i>
-                            </a>
-                            <a href="https://www.instagram.com/" class="header__navbar-link header__navbar-link--prevent" target="blank">
-                                <i class="fab fa-instagram header__navbar-icon"></i>
-                            </a>
+                        <li class="header__navbar-item header__navbar-item--prevent">
+                            <span>Kết nối</span>
+                            <div class="header__navbar-icons">
+                                <a href="https://www.facebook.com/"
+                                    class="header__navbar-link header__navbar-link--prevent" target="blank">
+                                    <i class="fab fa-facebook header__navbar-icon"></i>
+                                </a>
+                                <a href="https://www.instagram.com/"
+                                    class="header__navbar-link header__navbar-link--prevent" target="blank">
+                                    <i class="fab fa-instagram header__navbar-icon"></i>
+                                </a>
+                            </div>
                         </li>
                     </ul>
 
@@ -65,7 +70,7 @@
                         <li class="header__navbar-item header__navbar-link--hover"><a href="#"
                                 class="header__navbar-link header__navbar-link--hover">
                                 <i class="far fa-bell header__navbar-icon"></i>
-                                Thông Báo
+                                <span>Thông Báo</span>
                             </a>
                             <!-- Header Notification -->
                             <div class="header__notify">
@@ -158,13 +163,90 @@
                         </li>
                         <li class="header__navbar-item"><a href="#" class="header__navbar-link">
                                 <i class="far fa-question-circle header__navbar-icon"></i>
-                                Hỗ Trợ
+                                <span>Hỗ Trợ</span>
                             </a></li>
                         <li class="header__navbar-item header__navbar-register header__navbar--separate"><a href="#"
                                 class="header__navbar-link">Đăng Ký</a></li>
-                        <li class="header__navbar-item header__navbar-login"><a href="#" class="header__navbar-link">Đăng Nhập</a></li>
+                        <li class="header__navbar-item header__navbar-login"><a href="#"
+                                class="header__navbar-link">Đăng Nhập</a></li>
                     </ul>
                 </nav>
+
+                <!-- Header with Search -->
+                <div class="header-search">
+                    <div class="header-search__logo">
+                        <a href="#" class="header-search__logo-link">
+                            <img src="./assets/img/search/shopee_logo.svg" alt="Shopee Logo"
+                                class="header-search__logo-img">
+                        </a>
+                    </div>
+
+                    <div class="header-search__box">
+                        <div class="header-search__box-container">
+                            <div class="header-search__box-group">
+                                <input type="text" placeholder="Tìm trong Shop này"
+                                    class="header-search__box-textBox">
+
+                                <ul class="header-search__box-history">
+                                    <li class="header-search__box-history-header">Lịch sử Tìm Kiếm</li>
+                                    <li class="header-search__box-history-item"><a>Ohui</a></li>
+                                    <li class="header-search__box-history-item"><a>History</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="header-search__box-dropdown">
+                                <div class="header-search__box-dropdown-value">
+                                    <div class="header-search__box-dropdown-box">Trong Shop này</div>
+                                    <i class="fas fa-chevron-down header-search__box-dropdown-icon"></i>
+                                </div>
+
+                                <ul class="header-search__box-dropdown-options">
+                                    <li value="Trong Shop này" class="header-search__box-dropdown-option">
+                                        <span>Trong Shop này</span>
+                                        <i class="fas fa-check header-search__box-dropdown-option-icon"></i>
+                                    </li>
+                                    <li value="Trong Shopee" class="header-search__box-dropdown-option">
+                                        <span>Trong Shopee</span>
+                                        <i class="header-search__box-dropdown-option-icon"></i>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="header-search__btn btn btn--primary">
+                                <i class="fas fa-search header-search__btn-icon"></i>
+                            </div>
+                        </div>
+
+                        <ul class="header-search__suggest">
+                            <li class="header-search__suggestions-item"><a href="#"
+                                    class="header-search__suggestions-item-link" data-toggle="dropdown">Bánh Trung
+                                    Thu</a></li>
+                            <li class="header-search__suggestions-item"><a href="#"
+                                    class="header-search__suggestions-item-link" data-toggle="dropdown">Áo Khoác</a>
+                            </li>
+                            <li class="header-search__suggestions-item"><a href="#"
+                                    class="header-search__suggestions-item-link" data-toggle="dropdown">Váy</a></li>
+                            <li class="header-search__suggestions-item"><a href="#"
+                                    class="header-search__suggestions-item-link" data-toggle="dropdown">Quần</a></li>
+                            <li class="header-search__suggestions-item"><a href="#"
+                                    class="header-search__suggestions-item-link" data-toggle="dropdown">Tai Nghe</a>
+                            </li>
+                            <li class="header-search__suggestions-item"><a href="#"
+                                    class="header-search__suggestions-item-link" data-toggle="dropdown">Bông Tẩy
+                                    Trang</a></li>
+                            <li class="header-search__suggestions-item"><a href="#"
+                                    class="header-search__suggestions-item-link" data-toggle="dropdown">Túi Xách
+                                    Nữ</a></li>
+                            <li class="header-search__suggestions-item"><a href="#"
+                                    class="header-search__suggestions-item-link" data-toggle="dropdown">Chân Váy</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="header-search__cart">
+                        <a href="#" class="header-search__cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -191,6 +273,7 @@
                         <div class="auth-form__group">
                             <input type="text" placeholder="Số điện thoại"
                                 class="auth-form__input auth-form__input-js">
+                            <div class="auth-form__inputs-msg">Số điện thoại không hợp lệ</div>
                         </div>
 
                         <div class="auth-form__group">
@@ -250,16 +333,17 @@
                     <div class="auth-form__inputs">
                         <div class="auth-form__group">
                             <input type="text" placeholder="Email/Số điện thoại/Tên đăng nhập"
-                                class="auth-form__input">
+                                class="auth-form__input auth-form__input-js">
                         </div>
                         <div class="auth-form__group">
-                            <input type="password" placeholder="Mật khẩu" class="auth-form__input">
+                            <input type="password" placeholder="Mật khẩu" maxlength="16"
+                                class="auth-form__input auth-form__input-js">
                             <i class="fas fa-eye-slash auth-form__password-icon"></i>
                         </div>
 
                         <div class="auth-form__group">
                             <input type="submit" value="ĐĂNG NHẬP" disabled
-                                class="auth-form__input auth-form__input--btn">
+                                class="auth-form__input auth-form__input-btn-js auth-form__input--btn">
                         </div>
                     </div>
 
@@ -295,7 +379,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <script src="./assets/js/main.js"></script>
