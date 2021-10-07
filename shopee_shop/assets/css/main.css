@@ -742,12 +742,11 @@
 
 .header-search__cart-list:hover,
 .header-search__cart-icon:hover + .header-search__cart-list {
-  display: flex;
+  display: block;
 }
 
 .header-search__cart-list {
-  /* display: none; */
-  display: block;
+  display: none;
   position: absolute;
   top: calc(100% + 10px);
   right: -12px;
@@ -800,8 +799,7 @@
 }
 
 .header-search__cart-product {
-  /* display: none; */
-  display: block;
+  display: none;
   width: 100%;
 }
 
@@ -816,7 +814,6 @@
 }
 
 .header-search__cart-product-list {
-  width: 100%;
   max-height: 75%;
   padding: 0;
   margin: 0;
@@ -825,8 +822,7 @@
 
 .header-search__cart-product-item {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  align-items: center;
   color: var(--text-color);
   padding: 10px;
 }
@@ -840,53 +836,63 @@
   border: 1px solid rgba(0, 0, 0, 0.09);
 }
 
-.header-search__cart-product-body {
+.header-search__cart-product-info {
   margin: 0 0 0 10px;
-  width: 86%;
+  min-width: 0; /* handle flex items overflow parent element */
 }
 
-.header-search__cart-product-desc {
+.header-search__cart-product-head {
   display: flex;
   justify-content: space-between;
 }
 
 .header-search__cart-product-name {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 1.4rem;
-  margin: 0;
+}
+
+.header__cart-product-price-wrap {
+  display: flex;
+  margin-left: 20px;
 }
 
 .header-search__cart-product-price {
+  margin: 0;
+  color: var(--primary-color);
   font-size: 1.4rem;
   font-weight: 500;
-  margin: 0 0 0 40px;
-  color: var(--primary-color);
 }
 
 .header-search__cart-product-times {
+  margin-left: 4px;
   color: #d8d8d8;
   font-size: 1rem;
-  margin-left: 4px;
 }
 
 .header-search__cart-product-qnt {
+  margin-left: 4px;
   color: #d8d8d8;
   font-size: 1.4rem;
-  margin-left: 4px;
+}
+
+.header-search__cart-product-body {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
 }
 
 .header-search__cart-product-delete {
-  text-align: right;
-  margin: 10px 0 0;
   font-size: 1.4rem;
+  cursor: pointer;
 }
 
-.header-search__cart-product-delete span:hover {
+.header-search__cart-product-delete:hover {
   color: var(--primary-color);
-  cursor: pointer;
 }
 
 .header-search__cart--no-cart .header-search__cart-empty,
