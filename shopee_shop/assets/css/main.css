@@ -786,6 +786,7 @@
   display: none;
   margin: auto;
   padding: 56px 0;
+  text-align: center;
 }
 
 .header-search__cart-empty-img {

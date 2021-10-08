@@ -3,12 +3,12 @@ const $$ = document.querySelectorAll.bind(document);
 
 const modal = $(".modal");
 const modalBody = $(".modal__body");
-const authForms = $$(".auth-form");
 const registerModalForm = $(".auth-form.register-form");
 const loginModalForm = $(".auth-form.login-form");
+const closeModalFormBtn = $$(".auth-form__closeBtn");
 const navBarRegister = $(".header__navbar-register");
 const navBarLogin = $(".header__navbar-login");
-const closeModalFormBtn = $$(".auth-form__closeBtn");
+const authForms = $$(".auth-form");
 const authFormLoginLink = $(".auth-form__help-login");
 const authFormRegisterLink = $(".auth-form__help-register");
 const authFormRegisterInput = $(".auth-form__input-js");
@@ -17,6 +17,15 @@ const authFormRegisterValidateMsg = $(".auth-form__inputs-msg");
 const authFormLoginInputs = $$(".login-form .auth-form__input-js");
 const authFormLoginBtn = $(".login-form .auth-form__input-btn-js");
 const authFormPwIcon = $(".auth-form__password-icon");
+const searchSelections = $$(".header-search__dropdown-item");
+const searchLabel = $(".header-search__dropdown-label");
+const searchHistoryOptions = $$(".header-search__history-item");
+const searchInput = $(".header-search__box-input");
+const searchSuggestions = $$('.header-search__suggestions-item');
+const searchCartDeletes = $$('.header-search__cart-product-delete');
+const searchCartItems = $$('.header-search__cart-product-item');
+const searchCartType = $('.header-search__cart-list');
+const searchCartNotify = $('.header-search__cart-notify');
 
 const app = {
   handleEvents: function () {
@@ -120,6 +129,49 @@ const app = {
         e.target.previousElementSibling.type = "password";
       }
     };
+
+    //handle when clicking search selections
+    Array.from(searchSelections).forEach((e) => {
+      e.onclick = function () {
+        //reset active selection
+        Array.from(searchSelections).forEach((element) => {
+          element.classList.remove("header-search__dropdown-item--active");
+        });
+
+        if (!e.classList.contains("header-search__dropdown-item--active")) {
+          e.classList.add("header-search__dropdown-item--active");
+          searchLabel.innerText = e.innerText;
+          searchInput.placeholder = "Tìm " + e.innerText;
+        }
+      };
+    });
+
+    //handle when clicking history options
+    Array.from(searchHistoryOptions).forEach((e) => {
+      e.onclick = function () {
+        searchInput.value = e.innerText;
+      };
+    });
+
+    //handle when clicking suggestion
+    Array.from(searchSuggestions).forEach((e) => {
+      e.onclick = function () {
+        searchInput.value = e.innerText;
+      }
+    });
+
+    //handle when clicking delete cart item
+    Array.from(searchCartDeletes).forEach((e, index) => {
+      e.onclick = function () {
+        searchCartItems[index].remove();
+        searchCartNotify.innerText = searchCartItems.length - index - 1;
+        if (index >= searchCartItems.length - 1) {
+          searchCartType.classList.remove('header-search__cart--has-cart');
+          searchCartType.classList.remove('header-search__cart--no-cart');
+          searchCartType.classList.add('header-search__cart--no-cart');
+        }
+      }
+    });
   },
 
   resetAuthForm: function () {
