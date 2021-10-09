@@ -20,14 +20,15 @@
     <div class="wrapper">
         <header class="header">
             <div class="grid">
-                <nav class="header__navbar grid__row">
+                <nav class="header__navbar">
                     <ul class="header__navbar-list">
-                        <li class="header__navbar-item header__navbar--separate"><a href="#"
-                                class="header__navbar-link">Kênh Người Bán</a></li>
-                        <li class="header__navbar-item header__navbar--separate"><a href="#"
-                                class="header__navbar-link">Trở Thành Người Bán Shopee</a></li>
-                        <li class="header__navbar-item header__navbar--separate header__navbar-link--hover">
-                            <a href="#" class="header__navbar-link">
+                        <li class="header__navbar-item"><a href="#"
+                                class="header__navbar-item-link header__navbar--separate">Kênh Người Bán</a></li>
+                        <li class="header__navbar-item"><a href="#"
+                                class="header__navbar-item-link header__navbar--separate">Trở Thành Người Bán
+                                Shopee</a></li>
+                        <li class="header__navbar-item header__navbar-link--hover">
+                            <a href="#" class="header__navbar-item-link header__navbar--separate">
                                 Tải ứng dụng
                             </a>
 
@@ -52,14 +53,14 @@
                         </li>
 
                         <li class="header__navbar-item header__navbar-item--prevent">
-                            <span>Kết nối</span>
+                            <span class="header__navbar-no-link">Kết nối</span>
                             <div class="header__navbar-icons">
                                 <a href="https://www.facebook.com/"
-                                    class="header__navbar-link header__navbar-link--prevent" target="blank">
+                                    class="header__navbar-icon-link header__navbar-link--prevent" target="blank">
                                     <i class="fab fa-facebook header__navbar-icon"></i>
                                 </a>
                                 <a href="https://www.instagram.com/"
-                                    class="header__navbar-link header__navbar-link--prevent" target="blank">
+                                    class="header__navbar-icon-link header__navbar-link--prevent" target="blank">
                                     <i class="fab fa-instagram header__navbar-icon"></i>
                                 </a>
                             </div>
@@ -68,7 +69,7 @@
 
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-link--hover"><a href="#"
-                                class="header__navbar-link header__navbar-link--hover">
+                                class="header__navbar-item-link">
                                 <i class="far fa-bell header__navbar-icon"></i>
                                 <span>Thông Báo</span>
                             </a>
@@ -161,14 +162,26 @@
 
                             </a>
                         </li>
-                        <li class="header__navbar-item"><a href="#" class="header__navbar-link">
+                        <li class="header__navbar-item"><a href="#" class="header__navbar-item-link">
                                 <i class="far fa-question-circle header__navbar-icon"></i>
                                 <span>Hỗ Trợ</span>
                             </a></li>
-                        <li class="header__navbar-item header__navbar-register header__navbar--separate"><a href="#"
-                                class="header__navbar-link">Đăng Ký</a></li>
+                        <!--  <li class="header__navbar-item header__navbar-register"><a href="#"
+                                class="header__navbar-item-link header__navbar--separate">Đăng Ký</a></li>
                         <li class="header__navbar-item header__navbar-login"><a href="#"
-                                class="header__navbar-link">Đăng Nhập</a></li>
+                                class="header__navbar-item-link">Đăng Nhập</a></li> -->
+
+                        <li class="header__navbar-item header__navbar-item-user-js header__navbar-link--hover">
+                            <a href="#" class="header__navbar-user-link header__navbar-item-link">
+                                <img src="./assets/img/header/avatar/Avatar.png" class="header__navbar-avatar">
+                                <span>Thanh Tung Le</span></a>
+
+                            <div class="header__navbar-user">
+                                <a href="#" class="header__navbar-user-item">Tài Khoản Của Tôi</a>
+                                <a href="#" class="header__navbar-user-item">Đơn Mua</a>
+                                <a href="#" class="header__navbar-user-item header__navbar-user-item--separate">Đăng Xuất</a>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
 
@@ -288,7 +301,9 @@
                                                 class="header-search__cart-product-img">
                                             <div class="header-search__cart-product-info">
                                                 <div class="header-search__cart-product-head">
-                                                    <h5 class="header-search__cart-product-name">Kem Chống Nắng Ohui Dưỡng Trắng Cho Da Nhạy Cảm - Ohui Dayshield Perfect Sun Pro Red</h5>
+                                                    <h5 class="header-search__cart-product-name">Kem Chống Nắng Ohui
+                                                        Dưỡng Trắng Cho Da Nhạy Cảm - Ohui Dayshield Perfect Sun Pro Red
+                                                    </h5>
                                                     <div class="header__cart-product-price-wrap">
                                                         <span class="header-search__cart-product-price">₫3.500</span>
                                                         <span class="header-search__cart-product-times">x</span>
@@ -305,7 +320,9 @@
                                                 class="header-search__cart-product-img">
                                             <div class="header-search__cart-product-info">
                                                 <div class="header-search__cart-product-head">
-                                                    <h5 class="header-search__cart-product-name">Gói kem chống nắng chống nhăn Whoo vàng - WHOO JIN HAE YOON WRINKLE SUN CREAM SPF50+/PA+++</h5>
+                                                    <h5 class="header-search__cart-product-name">Gói kem chống nắng
+                                                        chống nhăn Whoo vàng - WHOO JIN HAE YOON WRINKLE SUN CREAM
+                                                        SPF50+/PA+++</h5>
                                                     <div class="header__cart-product-price-wrap">
                                                         <span class="header-search__cart-product-price">₫3.900</span>
                                                         <span class="header-search__cart-product-times">x</span>
@@ -322,7 +339,9 @@
                                                 class="header-search__cart-product-img">
                                             <div class="header-search__cart-product-info">
                                                 <div class="header-search__cart-product-head">
-                                                    <h5 class="header-search__cart-product-name">Gói kem dưỡng mắt Ohui tím, giảm nhăn thâm và bọng mắt - Ohui Age Recovery Eye Cream</h5>
+                                                    <h5 class="header-search__cart-product-name">Gói kem dưỡng mắt Ohui
+                                                        tím, giảm nhăn thâm và bọng mắt - Ohui Age Recovery Eye Cream
+                                                    </h5>
                                                     <div class="header__cart-product-price-wrap">
                                                         <span class="header-search__cart-product-price">₫3.600</span>
                                                         <span class="header-search__cart-product-times">x</span>
@@ -339,7 +358,9 @@
                                                 class="header-search__cart-product-img">
                                             <div class="header-search__cart-product-info">
                                                 <div class="header-search__cart-product-head">
-                                                    <h5 class="header-search__cart-product-name">Gói serum tinh chất dưỡng trắng, căng bóng, chống lão hóa da - Ohui Prime Advancer Ampoule Serum</h5>
+                                                    <h5 class="header-search__cart-product-name">Gói serum tinh chất
+                                                        dưỡng trắng, căng bóng, chống lão hóa da - Ohui Prime Advancer
+                                                        Ampoule Serum</h5>
                                                     <div class="header__cart-product-price-wrap">
                                                         <span class="header-search__cart-product-price">₫3.500</span>
                                                         <span class="header-search__cart-product-times">x</span>
@@ -365,7 +386,32 @@
             </div>
         </header>
 
-        <div class="container"></div>
+        <div class="container">
+           <div class="grid">
+            <div class="grid__row">
+                <div class="grid__column-2">
+                    <nav class="category">
+                        <h3 class="category__heading">Danh Mục</h3>
+                        <ul class="category-list">
+                            <li class="category-item">
+                                <a href="#" class="category-item__link">Sản Phẩm</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-item__link">Sữa Rửa Mặt</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-item__link">Cnp Rx</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="grid__column-10">
+                    
+                </div>
+            </div>
+           </div>
+        </div>
 
         <footer class="footer"></footer>
     </div>

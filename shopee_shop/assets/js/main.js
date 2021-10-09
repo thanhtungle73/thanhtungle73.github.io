@@ -19,13 +19,14 @@ const authFormLoginBtn = $(".login-form .auth-form__input-btn-js");
 const authFormPwIcon = $(".auth-form__password-icon");
 const searchSelections = $$(".header-search__dropdown-item");
 const searchLabel = $(".header-search__dropdown-label");
+const searchHistoryContainer = $(".header-search__history");
 const searchHistoryOptions = $$(".header-search__history-item");
 const searchInput = $(".header-search__box-input");
-const searchSuggestions = $$('.header-search__suggestions-item');
-const searchCartDeletes = $$('.header-search__cart-product-delete');
-const searchCartItems = $$('.header-search__cart-product-item');
-const searchCartType = $('.header-search__cart-list');
-const searchCartNotify = $('.header-search__cart-notify');
+const searchSuggestions = $$(".header-search__suggestions-item");
+const searchCartDeletes = $$(".header-search__cart-product-delete");
+const searchCartItems = $$(".header-search__cart-product-item");
+const searchCartType = $(".header-search__cart-list");
+const searchCartNotify = $(".header-search__cart-notify");
 
 const app = {
   handleEvents: function () {
@@ -50,18 +51,22 @@ const app = {
     };
 
     //handle when click register menu
-    navBarRegister.onclick = function () {
-      _this.resetAuthForm();
-      modal.style.display = "flex";
-      registerModalForm.classList.add("active-form");
-    };
+    if (navBarRegister) {
+      navBarRegister.onclick = function () {
+        _this.resetAuthForm();
+        modal.style.display = "flex";
+        registerModalForm.classList.add("active-form");
+      };
+    }
 
     //handle when click login menu
-    navBarLogin.onclick = function () {
-      _this.resetAuthForm();
-      modal.style.display = "flex";
-      loginModalForm.classList.add("active-form");
-    };
+    if (navBarLogin) {
+      navBarLogin.onclick = function () {
+        _this.resetAuthForm();
+        modal.style.display = "flex";
+        loginModalForm.classList.add("active-form");
+      };
+    }
 
     //handle when click close form btn
     Array.from(closeModalFormBtn).forEach(function (e) {
@@ -146,6 +151,18 @@ const app = {
       };
     });
 
+    //handle when click search input & history list, close when click outside
+    document.onclick = function (e) {
+      if (
+        e.target.matches(".header-search__box-input") ||
+        e.target.closest(".header-search__history")
+      ) {
+        searchHistoryContainer.style.display = "block";
+      } else {
+        searchHistoryContainer.style.display = "none";
+      }
+    };
+
     //handle when clicking history options
     Array.from(searchHistoryOptions).forEach((e) => {
       e.onclick = function () {
@@ -157,20 +174,21 @@ const app = {
     Array.from(searchSuggestions).forEach((e) => {
       e.onclick = function () {
         searchInput.value = e.innerText;
-      }
+      };
     });
 
     //handle when clicking delete cart item
     Array.from(searchCartDeletes).forEach((e, index) => {
       e.onclick = function () {
         searchCartItems[index].remove();
-        searchCartNotify.innerText = searchCartItems.length - index - 1;
-        if (index >= searchCartItems.length - 1) {
-          searchCartType.classList.remove('header-search__cart--has-cart');
-          searchCartType.classList.remove('header-search__cart--no-cart');
-          searchCartType.classList.add('header-search__cart--no-cart');
+        const currentCart = $$(".header-search__cart-product-item");
+        searchCartNotify.innerText = currentCart.length;
+        if (currentCart.length <= 0) {
+          searchCartType.classList.remove("header-search__cart--has-cart");
+          searchCartType.classList.remove("header-search__cart--no-cart");
+          searchCartType.classList.add("header-search__cart--no-cart");
         }
-      }
+      };
     });
   },
 
