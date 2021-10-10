@@ -27,8 +27,83 @@ const searchCartDeletes = $$(".header-search__cart-product-delete");
 const searchCartItems = $$(".header-search__cart-product-item");
 const searchCartType = $(".header-search__cart-list");
 const searchCartNotify = $(".header-search__cart-notify");
+const categorySortItemCheckBox = $$(".category-sort-item");
+const categorySortMore = $(".category-sort__more");
+const categorySortListContainer = $(".category-sort-items");
+const categoryMainItems = $$('.category-item');
 
 const app = {
+  categorySortListData: [
+    {
+      id: 1,
+      name: "Sữa rửa mặt",
+      quantity: 26,
+    },
+    {
+      id: 2,
+      name: "Bộ sản phẩm làm đẹp",
+      quantity: 24,
+    },
+    {
+      id: 3,
+      name: "Sản phẩm dưỡng mắt",
+      quantity: 23,
+    },
+    {
+      id: 4,
+      name: "Kem chống nắng cho mặt",
+      quantity: 17,
+    },
+    {
+      id: 5,
+      name: "Mặt nạ",
+      quantity: 16,
+    },
+    {
+      id: 6,
+      name: "Tẩy tế bào chết",
+      quantity: 8,
+    },
+    {
+      id: 7,
+      name: "Chăm sóc tóc",
+      quantity: 6,
+    },
+    {
+      id: 8,
+      name: "Dầu dưỡng ẩm",
+      quantity: 6,
+    },
+  ],
+
+  //render category sort list when clicking more
+  renderCategorySortMore: function (categoryData) {
+    categoryData.forEach((item) => {
+      const node = document.createElement("li");
+      node.innerHTML = `
+        <div class="category-sort-item__checkbox">
+          <i class="fas fa-check category-sort-item__icon"></i>
+        </div>
+        <p class="category-sort-item__value">${item.name} (${item.quantity})</p>
+      `;
+
+      node.setAttribute(
+        "class",
+        `category-sort-item category-sort-item__more-${item.id}`
+      );
+      node.setAttribute("onclick", `app.checkCategoryBox(${item.id})`);
+      node.setAttribute("animation", "opacityIncrease 0.2s ease");
+      categorySortListContainer.appendChild(node);
+    });
+  },
+
+  //handle check category checkbox
+  checkCategoryBox: function (id) {
+    $(`.category-sort-item__more-${id}`).classList.toggle(
+      "category-sort-item__checked"
+    );
+  },
+
   handleEvents: function () {
     const _this = this;
 
@@ -189,6 +264,31 @@ const app = {
           searchCartType.classList.add("header-search__cart--no-cart");
         }
       };
+    });
+
+    //handle when clicking category sort checkbox
+    Array.from(categorySortItemCheckBox).forEach((e) => {
+      e.onclick = function () {
+        e.classList.toggle("category-sort-item__checked");
+      };
+    });
+
+    //handle when clicking category more btn
+    categorySortMore.onclick = function () {
+      categorySortListContainer.style.display = "block";
+      categorySortListContainer.style.animation = "opacityIncrease 0.3s ease";
+      _this.renderCategorySortMore(_this.categorySortListData);
+      categorySortMore.style.display = "none";
+    };
+
+    //handle when select category main items
+    Array.from(categoryMainItems).forEach((e)=>{
+      e.onclick = function () {
+        Array.from(categoryMainItems).forEach((elementRS)=>{
+          elementRS.classList.remove('category-item--active');
+        });
+        e.classList.add('category-item--active');
+      }
     });
   },
 

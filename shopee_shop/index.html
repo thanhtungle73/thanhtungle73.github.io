@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="app">
         <header class="header">
             <div class="grid">
                 <nav class="header__navbar">
@@ -179,7 +179,8 @@
                             <div class="header__navbar-user">
                                 <a href="#" class="header__navbar-user-item">Tài Khoản Của Tôi</a>
                                 <a href="#" class="header__navbar-user-item">Đơn Mua</a>
-                                <a href="#" class="header__navbar-user-item header__navbar-user-item--separate">Đăng Xuất</a>
+                                <a href="#" class="header__navbar-user-item header__navbar-user-item--separate">Đăng
+                                    Xuất</a>
                             </div>
                         </li>
                     </ul>
@@ -386,31 +387,230 @@
             </div>
         </header>
 
-        <div class="container">
-           <div class="grid">
-            <div class="grid__row">
-                <div class="grid__column-2">
-                    <nav class="category">
-                        <h3 class="category__heading">Danh Mục</h3>
-                        <ul class="category-list">
-                            <li class="category-item">
-                                <a href="#" class="category-item__link">Sản Phẩm</a>
-                            </li>
-                            <li class="category-item">
-                                <a href="#" class="category-item__link">Sữa Rửa Mặt</a>
-                            </li>
-                            <li class="category-item">
-                                <a href="#" class="category-item__link">Cnp Rx</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+        <div class="app__container">
+            <div class="grid">
+                <a href="#" class="category__back-link">
+                    <i class="fas fa-chevron-left category__back-link-icon"></i>
+                    Trở lại trang của shop
+                </a>
 
-                <div class="grid__column-10">
-                    
+                <div class="grid__row">
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <div class="category__shop-avatar">
+                                <div class="category__shop-avatar-container">
+                                    <a href="#" class="category__shop-avatar-link">
+                                        <img src="./assets/img/container/category/shop_avatar.png" alt="Shop Avatar"
+                                            class="category__shop-avatar-img">
+                                        <span class="category__shop-avatar-like">Yêu Thích+</span>
+                                    </a>
+                                    <p class="category__shop-avatar-name">LTT Shop</p>
+                                    <p class="category__shop-avatar-status">Online 5 phút trước</p>
+                                </div>
+                            </div>
+
+                            <h3 class="category__heading">DANH MỤC SHOP</h3>
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Sản Phẩm</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Sữa Rửa Mặt</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Cnp Rx</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Ohui</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Whoo</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Su:m37</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Sulwhasoo</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Hera</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Saga - Amore - Vdl</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Serum Các Loại</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Top Bán Chạy Nhất</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Su:m37 Xanh Cho Da Dầu Mụn</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Losec Summa Su:m37</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Giảm giá</a>
+                                </li>
+                            </ul>
+                            <!-- THEO DANH MỤC -->
+                            <h3 class="category__heading category__heading--sub">THEO DANH MỤC</h3>
+                            <ul class="category-sort-list">
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Kem dưỡng ẩm (83)</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Tinh chất dưỡng (81)</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Trang điểm (57)</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Nước cân bằng da (36)</p>
+                                </li>
+                                <div class="category-sort-items">
+
+                                </div>
+                            </ul>
+                            <div class="category-sort__more category-sort__more--mb30">
+                                Thêm
+                                <i class="fas fa-chevron-down category-sort__more-icon"></i>
+                            </div>
+                            <!-- NƠI BÁN -->
+                            <h3 class="category__heading category__heading--sub">NƠI BÁN</h3>
+                            <ul class="category-sort-list">
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">TP. Hồ Chí Minh</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Hà Nội</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Quận 1</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Quận 2</p>
+                                </li>
+                                <div class="category-sort-items">
+                                </div>
+                            </ul>
+                            <div class="category-sort__more category-sort__more--mb30">
+                                Thêm
+                                <i class="fas fa-chevron-down category-sort__more-icon"></i>
+                            </div>
+                            <!-- ĐƠN VỊ VẬN CHUYỂN -->
+                            <h3 class="category__heading category__heading--sub">ĐƠN VỊ VẬN CHUYỂN</h3>
+                            <ul class="category-sort-list">
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Hỏa Tốc</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Nhanh</p>
+                                </li>
+                                <li class="category-sort-item category-sort__more--mb30">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Tiết Kiệm</p>
+                                </li>
+                            </ul>
+
+                            <!-- THƯƠNG HIỆU-->
+                            <h3 class="category__heading category__heading--sub">THƯƠNG HIỆU</h3>
+                            <ul class="category-sort-list">
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">su:m37˚</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">Sulwhasoo</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">HERA</p>
+                                </li>
+                                <li class="category-sort-item">
+                                    <div class="category-sort-item__checkbox">
+                                        <i class="fas fa-check category-sort-item__icon"></i>
+                                    </div>
+                                    <p class="category-sort-item__value">AMOREPACIFIC</p>
+                                </li>
+                                <div class="category-sort-items">
+                                </div>
+                            </ul>
+                            <div class="category-sort__more category-sort__more--mb30">
+                                Thêm
+                                <i class="fas fa-chevron-down category-sort__more-icon"></i>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="grid__column-10">
+                        <div class="home-filter">
+                            <div class="home-filter__container">
+                                <span class="home-filter__label">Sắp xếp theo</span>
+                                <button class="home-filter__btn btn btn--primary">Phổ Biến</button>
+                                <button class="home-filter__btn btn">Mới Nhất</button>
+                                <button class="home-filter__btn btn">Bán Chạy</button>
+                                <div class="home-filter__price">
+                                    <span class="home-filter__price-text">Giá</span>
+                                    <i class="fas fa-chevron-down home-filter__price-icon"></i>
+                                    <ul class="home-filter__price-container">
+                                        <li class="home-filter__price-item">Giá: Thấp đến Cao</li>
+                                        <li class="home-filter__price-item">Giá: Cao đến Thấp</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="home-filter__pages-container">
+                                <span class="home-filter__pages">1/14</span>
+                                <button class="home-filter__previous-btn btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="home-filter__next- btn">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-           </div>
         </div>
 
         <footer class="footer"></footer>
